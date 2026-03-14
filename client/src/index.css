@@ -1,10 +1,10 @@
 /* 
-  Design Philosophy: Professional Modern / Teal Accent
-  - Light cream background with teal accents
-  - Teal (#0D9488) as primary accent color
+  Design Philosophy: Urban Athletic / Sports Editorial
+  - Dark court aesthetic: deep charcoal backgrounds
+  - Blazing orange (#FF6B00) as primary accent
   - Barlow Condensed for display/headings, DM Sans for body
-  - Clean card-based layout with teal left stripes
-  - Professional, modern, accessible aesthetic
+  - Diagonal slash dividers, jersey-number typography
+  - High contrast, cinematic feel
 */
 
 @import "tailwindcss";
@@ -53,38 +53,38 @@
 
 :root {
   --radius: 0.5rem;
-  --background: oklch(0.97 0.002 265);
-  --foreground: oklch(0.20 0.008 265);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.20 0.008 265);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.20 0.008 265);
-  --primary: oklch(0.52 0.16 180);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.95 0.002 265);
-  --secondary-foreground: oklch(0.35 0.008 265);
-  --muted: oklch(0.90 0.002 265);
-  --muted-foreground: oklch(0.50 0.01 265);
-  --accent: oklch(0.52 0.16 180);
-  --accent-foreground: oklch(1 0 0);
+  --background: oklch(0.13 0.008 265);
+  --foreground: oklch(0.97 0.002 265);
+  --card: oklch(0.17 0.008 265);
+  --card-foreground: oklch(0.97 0.002 265);
+  --popover: oklch(0.17 0.008 265);
+  --popover-foreground: oklch(0.97 0.002 265);
+  --primary: oklch(0.68 0.19 42);
+  --primary-foreground: oklch(0.13 0.008 265);
+  --secondary: oklch(0.22 0.008 265);
+  --secondary-foreground: oklch(0.85 0.005 265);
+  --muted: oklch(0.20 0.008 265);
+  --muted-foreground: oklch(0.60 0.01 265);
+  --accent: oklch(0.68 0.19 42);
+  --accent-foreground: oklch(0.13 0.008 265);
   --destructive: oklch(0.60 0.22 27);
   --destructive-foreground: oklch(0.97 0 0);
-  --border: oklch(0.90 0.002 265);
-  --input: oklch(0.95 0.002 265);
-  --ring: oklch(0.52 0.16 180);
-  --chart-1: oklch(0.52 0.16 180);
-  --chart-2: oklch(0.55 0.14 180);
-  --chart-3: oklch(0.50 0.12 180);
-  --chart-4: oklch(0.45 0.10 180);
-  --chart-5: oklch(0.40 0.08 180);
-  --sidebar: oklch(0.98 0.001 265);
-  --sidebar-foreground: oklch(0.20 0.008 265);
-  --sidebar-primary: oklch(0.52 0.16 180);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.90 0.002 265);
-  --sidebar-accent-foreground: oklch(0.20 0.008 265);
-  --sidebar-border: oklch(0.90 0.002 265);
-  --sidebar-ring: oklch(0.52 0.16 180);
+  --border: oklch(0.28 0.008 265);
+  --input: oklch(0.22 0.008 265);
+  --ring: oklch(0.68 0.19 42);
+  --chart-1: oklch(0.68 0.19 42);
+  --chart-2: oklch(0.58 0.16 42);
+  --chart-3: oklch(0.48 0.12 42);
+  --chart-4: oklch(0.38 0.09 42);
+  --chart-5: oklch(0.28 0.06 42);
+  --sidebar: oklch(0.15 0.008 265);
+  --sidebar-foreground: oklch(0.97 0.002 265);
+  --sidebar-primary: oklch(0.68 0.19 42);
+  --sidebar-primary-foreground: oklch(0.13 0.008 265);
+  --sidebar-accent: oklch(0.22 0.008 265);
+  --sidebar-accent-foreground: oklch(0.85 0.005 265);
+  --sidebar-border: oklch(0.28 0.008 265);
+  --sidebar-ring: oklch(0.68 0.19 42);
 }
 
 @layer base {
@@ -143,7 +143,7 @@
     }
   }
 
-  /* Teal accent divider */
+  /* Orange slash accent divider */
   .slash-divider {
     position: relative;
     overflow: hidden;
@@ -155,7 +155,7 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, oklch(0.52 0.16 180), oklch(0.55 0.14 180) 60%, transparent);
+    background: linear-gradient(90deg, oklch(0.68 0.19 42), oklch(0.58 0.16 42) 60%, transparent);
   }
 
   /* Section label style */
@@ -165,20 +165,20 @@
     text-transform: uppercase;
     letter-spacing: 0.15em;
     font-size: 0.75rem;
-    color: oklch(0.52 0.16 180);
+    color: oklch(0.68 0.19 42);
   }
 
   /* Game card */
   .game-card {
-    background: oklch(1 0 0);
-    border: 1px solid oklch(0.90 0.002 265);
-    border-left: 4px solid oklch(0.52 0.16 180);
+    background: oklch(0.17 0.008 265);
+    border: 1px solid oklch(0.28 0.008 265);
+    border-left: 3px solid oklch(0.68 0.19 42);
     transition: all 0.2s ease;
   }
   .game-card:hover {
-    background: oklch(0.98 0.001 265);
+    background: oklch(0.20 0.008 265);
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px oklch(0 0 0 / 0.08);
+    box-shadow: 0 8px 24px oklch(0 0 0 / 0.4);
   }
 
   /* Win badge */
@@ -205,8 +205,8 @@
     border-radius: 3px;
   }
   .badge-upcoming {
-    background: oklch(0.90 0.002 265);
-    color: oklch(0.52 0.16 180);
+    background: oklch(0.25 0.05 265);
+    color: oklch(0.65 0.05 265);
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
     text-transform: uppercase;
@@ -234,20 +234,20 @@
     text-transform: uppercase;
     letter-spacing: 0.08em;
     font-size: 0.9rem;
-    color: oklch(0.50 0.01 265);
+    color: oklch(0.65 0.01 265);
     transition: color 0.15s ease;
     padding: 4px 0;
     border-bottom: 2px solid transparent;
   }
   .nav-link:hover, .nav-link.active {
-    color: oklch(0.52 0.16 180);
-    border-bottom-color: oklch(0.52 0.16 180);
+    color: oklch(0.68 0.19 42);
+    border-bottom-color: oklch(0.68 0.19 42);
   }
 
   /* Standings row highlight */
   .standings-row-highlight {
-    background: oklch(0.52 0.16 180 / 0.1);
-    border-left: 3px solid oklch(0.52 0.16 180);
+    background: oklch(0.22 0.015 42 / 0.3);
+    border-left: 3px solid oklch(0.68 0.19 42);
   }
 
   /* Animate fade up */

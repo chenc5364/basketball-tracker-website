@@ -10,14 +10,14 @@ export default function StandingsPage() {
     <PageLayout title="Standings" subtitle="Division Rankings">
       <div className="space-y-6">
         {/* Standings table */}
-        <div className="overflow-x-auto rounded-sm border border-[oklch(0.90_0.002_265)]">
+        <div className="overflow-x-auto rounded-sm border border-[oklch(0.28_0.008_265)]">
           <table className="w-full text-sm">
             <thead>
-              <tr className="bg-[oklch(0.90_0.002_265)] border-b border-[oklch(0.90_0.002_265)]">
+              <tr className="bg-[oklch(0.20_0.008_265)] border-b border-[oklch(0.28_0.008_265)]">
                 {["Seed", "Team", "W", "L", "T", "PD", "PS", "PA"].map((col) => (
                   <th
                     key={col}
-                    className={`px-4 py-3 text-[oklch(0.50_0.01_265)] font-bold uppercase tracking-wider text-xs ${
+                    className={`px-4 py-3 text-[oklch(0.55_0.01_265)] font-bold uppercase tracking-wider text-xs ${
                       col === "Team" ? "text-left" : "text-center"
                     }`}
                     style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.1em" }}
@@ -31,14 +31,14 @@ export default function StandingsPage() {
               {STANDINGS.map((row: any, idx: number) => (
                 <tr
                   key={row.seed}
-                  className={`border-b border-[oklch(0.90_0.002_265)] transition-colors duration-150 ${
+                  className={`border-b border-[oklch(0.22_0.008_265)] transition-colors duration-150 ${
                     row.isOurTeam
-                      ? "bg-[oklch(0.52_0.16_180/0.1)]"
+                      ? "bg-[oklch(0.22_0.015_42/0.3)]"
                       : idx % 2 === 0
-                      ? "bg-oklch(1_0_0)"
-                      : "bg-[oklch(0.98_0.001_265)]"
-                  } hover:bg-[oklch(0.95_0.002_265)]`}
-                  style={row.isOurTeam ? { borderLeft: "3px solid oklch(0.52 0.16 180)" } : {}}
+                      ? "bg-[oklch(0.17_0.008_265)]"
+                      : "bg-[oklch(0.15_0.008_265)]"
+                  } hover:bg-[oklch(0.20_0.008_265)]`}
+                  style={row.isOurTeam ? { borderLeft: "3px solid oklch(0.68 0.19 42)" } : {}}
                 >
                   {/* Seed */}
                   <td className="px-4 py-3 text-center">
@@ -47,7 +47,7 @@ export default function StandingsPage() {
                         <Trophy className="w-4 h-4 text-yellow-400" />
                       ) : (
                         <span
-                          className={`font-bold ${row.isOurTeam ? "text-[oklch(0.52_0.16_180)]" : "text-[oklch(0.50_0.01_265)]"}`}
+                          className={`font-bold ${row.isOurTeam ? "text-[oklch(0.68_0.19_42)]" : "text-[oklch(0.55_0.01_265)]"}`}
                           style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1rem" }}
                         >
                           {row.seed}
@@ -60,14 +60,14 @@ export default function StandingsPage() {
                   <td className="px-4 py-3 text-left">
                     <div className="flex items-center gap-2">
                       <span
-                        className={`font-bold ${row.isOurTeam ? "text-[oklch(0.52_0.16_180)]" : "text-[oklch(0.20_0.008_265)]"}`}
+                        className={`font-bold ${row.isOurTeam ? "text-[oklch(0.68_0.19_42)]" : "text-white"}`}
                         style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "0.95rem", textTransform: "uppercase", letterSpacing: "0.02em" }}
                       >
                         {row.team}
                       </span>
                       {row.isOurTeam && (
                         <span
-                          className="text-xs px-2 py-0.5 bg-[oklch(0.52_0.16_180/0.2)] text-[oklch(0.52_0.16_180)] rounded-sm font-bold uppercase"
+                          className="text-xs px-2 py-0.5 bg-[oklch(0.68_0.19_42/0.2)] text-[oklch(0.68_0.19_42)] rounded-sm font-bold uppercase"
                           style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.08em" }}
                         >
                           Our Team
@@ -80,7 +80,7 @@ export default function StandingsPage() {
                   {[row.w, row.l, row.t, row.pd, row.ps, row.pa].map((val, i) => (
                     <td key={i} className="px-4 py-3 text-center">
                       <span
-                        className={`font-bold ${row.isOurTeam ? "text-[oklch(0.52_0.16_180)]" : "text-[oklch(0.50_0.01_265)]"}`}
+                        className={`font-bold ${row.isOurTeam ? "text-[oklch(0.80_0.005_265)]" : "text-[oklch(0.65_0.01_265)]"}`}
                         style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "0.95rem" }}
                       >
                         {val}

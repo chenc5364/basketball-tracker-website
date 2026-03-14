@@ -25,22 +25,22 @@ function GameCard({ game }: { game: Game }) {
 
   return (
     <div
-      className="game-card rounded-sm overflow-hidden border-l-4 border-l-[oklch(0.52_0.16_180)]"
-      style={{ borderLeftColor: "oklch(0.52 0.16 180)" }}
+      className="game-card rounded-sm overflow-hidden border-l-4 border-l-[oklch(0.68_0.19_42)]"
+      style={{ borderLeftColor: "oklch(0.68 0.19 42)" }}
     >
       {/* Prominent date/time header */}
-      <div className="bg-[oklch(0.90_0.002_265)] px-4 py-3 border-b border-[oklch(0.90_0.002_265)]">
+      <div className="bg-[oklch(0.22_0.015_42)] px-4 py-3 border-b border-[oklch(0.28_0.008_265)]">
         <div className="flex items-center justify-between gap-3">
           <div className="flex-1">
-            <div className="text-[oklch(0.52_0.16_180)] font-bold" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.3rem", letterSpacing: "0.05em", textTransform: "uppercase" }}>
+            <div className="text-[oklch(0.68_0.19_42)] font-bold" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.3rem", letterSpacing: "0.05em", textTransform: "uppercase" }}>
               {game.date}
             </div>
             <div className="flex items-center gap-2 mt-1">
-              <Clock className="w-4 h-4 text-[oklch(0.52_0.16_180)]" />
-              <span className="text-[oklch(0.52_0.16_180)] font-bold" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1rem", letterSpacing: "0.05em" }}>
+              <Clock className="w-4 h-4 text-[oklch(0.68_0.19_42)]" />
+              <span className="text-[oklch(0.68_0.19_42)] font-bold" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1rem", letterSpacing: "0.05em" }}>
                 {game.time}
               </span>
-              <span className="text-[oklch(0.50_0.01_265)] text-xs ml-auto" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em" }}>
+              <span className="text-[oklch(0.45_0.01_265)] text-xs ml-auto" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em" }}>
                 {game.pool}
               </span>
             </div>
@@ -57,26 +57,26 @@ function GameCard({ game }: { game: Game }) {
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-1">
             <span
-              className="text-[oklch(0.50_0.01_265)] text-xs uppercase tracking-wider"
+              className="text-[oklch(0.45_0.01_265)] text-xs uppercase tracking-wider"
               style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600 }}
             >
               Home
             </span>
             {isHome && (
-              <span className="text-[oklch(0.52_0.16_180)] text-xs font-bold uppercase" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+              <span className="text-[oklch(0.68_0.19_42)] text-xs font-bold uppercase" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
                 ← US
               </span>
             )}
           </div>
           <div
-            className={`font-bold truncate ${isHome ? "text-[oklch(0.52_0.16_180)]" : "text-[oklch(0.20_0.008_265)]"}`}
+            className={`font-bold truncate ${isHome ? "text-[oklch(0.68_0.19_42)]" : "text-white"}`}
             style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1rem", letterSpacing: "0.02em", textTransform: "uppercase" }}
           >
             {game.home}
           </div>
           {game.homeScore !== undefined && (
             <div
-              className="text-2xl font-bold text-[oklch(0.20_0.008_265)]"
+              className="text-2xl font-bold text-white"
               style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
             >
               {game.homeScore}
@@ -85,7 +85,7 @@ function GameCard({ game }: { game: Game }) {
         </div>
 
         <div
-          className="text-[oklch(0.50_0.01_265)] font-bold text-lg"
+          className="text-[oklch(0.45_0.01_265)] font-bold text-lg"
           style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
         >
           VS
@@ -94,7 +94,7 @@ function GameCard({ game }: { game: Game }) {
         <div className="flex-1 min-w-0 text-right">
           <div className="flex items-center gap-2 justify-end mb-1">
             {game.away === OUR_TEAM && (
-              <span className="text-[oklch(0.52_0.16_180)] text-xs font-bold uppercase" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+              <span className="text-[oklch(0.68_0.19_42)] text-xs font-bold uppercase" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
                 US →
               </span>
             )}
@@ -106,14 +106,14 @@ function GameCard({ game }: { game: Game }) {
             </span>
           </div>
           <div
-            className={`font-bold truncate ${game.away === OUR_TEAM ? "text-[oklch(0.52_0.16_180)]" : "text-[oklch(0.20_0.008_265)]"}`}
+            className={`font-bold truncate ${game.away === OUR_TEAM ? "text-[oklch(0.68_0.19_42)]" : "text-white"}`}
             style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1rem", letterSpacing: "0.02em", textTransform: "uppercase" }}
           >
             {game.away}
           </div>
           {game.awayScore !== undefined && (
             <div
-              className="text-2xl font-bold text-[oklch(0.20_0.008_265)] text-right"
+              className="text-2xl font-bold text-white text-right"
               style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
             >
               {game.awayScore}
@@ -123,7 +123,7 @@ function GameCard({ game }: { game: Game }) {
       </div>
 
       {/* Location */}
-      <div className="mt-3 pt-3 border-t border-[oklch(0.90_0.002_265)] flex items-center gap-1.5 text-[oklch(0.50_0.01_265)]">
+      <div className="mt-3 pt-3 border-t border-[oklch(0.22_0.008_265)] flex items-center gap-1.5 text-[oklch(0.45_0.01_265)]">
         <MapPin className="w-3 h-3 flex-shrink-0" />
         <span className="text-xs truncate" style={{ fontFamily: "'DM Sans', sans-serif" }}>
           {game.location} — {game.court}
@@ -136,18 +136,18 @@ function GameCard({ game }: { game: Game }) {
 
 function PracticeCard({ session }: { session: (typeof PRACTICE_SCHEDULE)[0] }) {
   return (
-    <div className="bg-oklch(1_0_0) border border-[oklch(0.90_0.002_265)] rounded-sm p-4 hover:border-[oklch(0.52_0.16_180/0.4)] transition-colors duration-200">
+    <div className="bg-[oklch(0.17_0.008_265)] border border-[oklch(0.28_0.008_265)] rounded-sm p-4 hover:border-[oklch(0.68_0.19_42/0.4)] transition-colors duration-200">
       {/* Day and time */}
       <div className="flex items-start justify-between gap-2 mb-3">
         <div>
           <div
-            className="text-[oklch(0.20_0.008_265)] font-bold text-lg"
+            className="text-white font-bold text-lg"
             style={{ fontFamily: "'Barlow Condensed', sans-serif", textTransform: "uppercase", letterSpacing: "0.03em" }}
           >
             {session.day}
           </div>
           {session.date && (
-            <div className="text-[oklch(0.50_0.01_265)] text-xs mt-1" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+            <div className="text-[oklch(0.55_0.01_265)] text-xs mt-1" style={{ fontFamily: "'DM Sans', sans-serif" }}>
               {session.date}
             </div>
           )}
