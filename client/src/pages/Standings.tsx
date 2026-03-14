@@ -28,7 +28,7 @@ export default function StandingsPage() {
               </tr>
             </thead>
             <tbody>
-              {STANDINGS.map((row, idx) => (
+              {STANDINGS.map((row: any, idx: number) => (
                 <tr
                   key={row.seed}
                   className={`border-b border-[oklch(0.22_0.008_265)] transition-colors duration-150 ${

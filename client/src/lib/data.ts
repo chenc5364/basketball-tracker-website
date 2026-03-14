@@ -1,4 +1,3 @@
-// Basketball Tracker Data
 // Carmel Valley Spring 2026 Basketball League — Grades 3rd-4th Boys
 // Team: Connor / Eliot / Nathan (Team #7 in standings)
 
@@ -32,9 +31,9 @@ export const TEAMS = [
   "Luke Franey/Naveen Krishnamoorthy",
   "Marcus Lee/Derick Chi",
   "Kolt Sakofsky/Grant Clabo",
-  "Connor / Eliot / Nathan",
+  "James McNally",
   "Jon Ramba",
-  "Connor Chen / Nathan Chang / Eliot D'Argenio",
+  "Connor / Eliot / Nathan",
   "Sam Hangafarin",
 ];
 
@@ -58,9 +57,9 @@ export interface Game {
 }
 
 // Our team is "Connor / Eliot / Nathan"
-// result is from our team's perspective
+// Only 7 regular season games from MasterSports schedule
 export const GAMES: Game[] = [
-  // Regular Season
+  // Regular Season - 7 games total
   {
     id: 1,
     pool: "Pool 1",
@@ -75,54 +74,6 @@ export const GAMES: Game[] = [
   },
   {
     id: 2,
-    pool: "Pool 2",
-    date: "Sat, Mar 21",
-    dateObj: "2026-03-21",
-    time: "11:30 AM",
-    location: "Carmel Valley Recreation Center",
-    court: "Court 1 (North)",
-    home: "Connor / Eliot / Nathan",
-    away: "Sam Hangafarin",
-    result: "upcoming",
-  },
-  {
-    id: 3,
-    pool: "Pool 3",
-    date: "Wed, Mar 25",
-    dateObj: "2026-03-25",
-    time: "5:15 PM",
-    location: "Ocean Air Park",
-    court: "West Court",
-    home: "Jon Ramba",
-    away: "Marcus Lee/Derick Chi",
-    result: "upcoming",
-  },
-  {
-    id: 4,
-    pool: "Pool 4",
-    date: "Wed, Mar 25",
-    dateObj: "2026-03-25",
-    time: "6:15 PM",
-    location: "Ocean Air Park",
-    court: "West Court",
-    home: "Kolt Sakofsky/Grant Clabo",
-    away: "Luke Franey/Naveen Krishnamoorthy",
-    result: "upcoming",
-  },
-  {
-    id: 5,
-    pool: "Pool 5",
-    date: "Wed, Apr 8",
-    dateObj: "2026-04-08",
-    time: "5:15 PM",
-    location: "Ocean Air Park",
-    court: "West Court",
-    home: "James McNally",
-    away: "Connor / Eliot / Nathan",
-    result: "upcoming",
-  },
-  {
-    id: 6,
     pool: "Pool 6",
     date: "Wed, Apr 8",
     dateObj: "2026-04-08",
@@ -134,55 +85,7 @@ export const GAMES: Game[] = [
     result: "upcoming",
   },
   {
-    id: 7,
-    pool: "Pool 7",
-    date: "Sat, Apr 11",
-    dateObj: "2026-04-11",
-    time: "10:30 AM",
-    location: "Carmel Valley Recreation Center",
-    court: "Court 1 (North)",
-    home: "Kolt Sakofsky/Grant Clabo",
-    away: "Sam Hangafarin",
-    result: "upcoming",
-  },
-  {
-    id: 8,
-    pool: "Pool 8",
-    date: "Sat, Apr 11",
-    dateObj: "2026-04-11",
-    time: "11:30 AM",
-    location: "Carmel Valley Recreation Center",
-    court: "Court 1 (North)",
-    home: "Luke Franey/Naveen Krishnamoorthy",
-    away: "Marcus Lee/Derick Chi",
-    result: "upcoming",
-  },
-  {
-    id: 9,
-    pool: "Pool 9",
-    date: "Wed, Apr 15",
-    dateObj: "2026-04-15",
-    time: "5:15 PM",
-    location: "Ocean Air Park",
-    court: "West Court",
-    home: "Catherine Hancock",
-    away: "Jon Ramba",
-    result: "upcoming",
-  },
-  {
-    id: 10,
-    pool: "Pool 10",
-    date: "Wed, Apr 15",
-    dateObj: "2026-04-15",
-    time: "6:15 PM",
-    location: "Ocean Air Park",
-    court: "West Court",
-    home: "Kolt Sakofsky/Grant Clabo",
-    away: "Connor / Eliot / Nathan",
-    result: "upcoming",
-  },
-  {
-    id: 11,
+    id: 3,
     pool: "Pool 11",
     date: "Sat, Apr 18",
     dateObj: "2026-04-18",
@@ -194,55 +97,7 @@ export const GAMES: Game[] = [
     result: "upcoming",
   },
   {
-    id: 12,
-    pool: "Pool 12",
-    date: "Sat, Apr 18",
-    dateObj: "2026-04-18",
-    time: "11:30 AM",
-    location: "Carmel Valley Recreation Center",
-    court: "Court 1 (North)",
-    home: "Marcus Lee/Derick Chi",
-    away: "Sam Hangafarin",
-    result: "upcoming",
-  },
-  {
-    id: 13,
-    pool: "Pool 13",
-    date: "Wed, Apr 22",
-    dateObj: "2026-04-22",
-    time: "5:15 PM",
-    location: "Ocean Air Park",
-    court: "West Court",
-    home: "Kolt Sakofsky/Grant Clabo",
-    away: "Catherine Hancock",
-    result: "upcoming",
-  },
-  {
-    id: 14,
-    pool: "Pool 14",
-    date: "Wed, Apr 22",
-    dateObj: "2026-04-22",
-    time: "6:15 PM",
-    location: "Ocean Air Park",
-    court: "West Court",
-    home: "Luke Franey/Naveen Krishnamoorthy",
-    away: "Jon Ramba",
-    result: "upcoming",
-  },
-  {
-    id: 15,
-    pool: "Pool 15",
-    date: "Sat, Apr 25",
-    dateObj: "2026-04-25",
-    time: "10:30 AM",
-    location: "Carmel Valley Recreation Center",
-    court: "Court 1 (North)",
-    home: "Marcus Lee/Derick Chi",
-    away: "Connor / Eliot / Nathan",
-    result: "upcoming",
-  },
-  {
-    id: 16,
+    id: 4,
     pool: "Pool 16",
     date: "Sat, Apr 25",
     dateObj: "2026-04-25",
@@ -254,79 +109,19 @@ export const GAMES: Game[] = [
     result: "upcoming",
   },
   {
-    id: 17,
-    pool: "Pool 17",
-    date: "Wed, Apr 29",
-    dateObj: "2026-04-29",
-    time: "5:15 PM",
-    location: "Ocean Air Park",
-    court: "West Court",
-    home: "Catherine Hancock",
-    away: "Luke Franey/Naveen Krishnamoorthy",
-    result: "upcoming",
-  },
-  {
-    id: 18,
-    pool: "Pool 18",
-    date: "Wed, Apr 29",
-    dateObj: "2026-04-29",
-    time: "6:15 PM",
-    location: "Ocean Air Park",
-    court: "West Court",
-    home: "Marcus Lee/Derick Chi",
-    away: "Kolt Sakofsky/Grant Clabo",
-    result: "upcoming",
-  },
-  {
-    id: 19,
-    pool: "Pool 19",
-    date: "Sat, May 2",
-    dateObj: "2026-05-02",
-    time: "10:30 AM",
-    location: "Carmel Valley Recreation Center",
-    court: "Court 1 (North)",
-    home: "Sam Hangafarin",
-    away: "Jon Ramba",
-    result: "upcoming",
-  },
-  {
-    id: 20,
+    id: 5,
     pool: "Pool 20",
     date: "Sat, May 2",
     dateObj: "2026-05-02",
     time: "11:30 AM",
     location: "Carmel Valley Recreation Center",
     court: "Court 1 (North)",
-    home: "James McNally",
-    away: "Connor / Eliot / Nathan",
+    home: "Connor / Eliot / Nathan",
+    away: "James McNally",
     result: "upcoming",
   },
   {
-    id: 21,
-    pool: "Pool 21",
-    date: "Wed, May 6",
-    dateObj: "2026-05-06",
-    time: "5:15 PM",
-    location: "Ocean Air Park",
-    court: "West Court",
-    home: "Marcus Lee/Derick Chi",
-    away: "Catherine Hancock",
-    result: "upcoming",
-  },
-  {
-    id: 22,
-    pool: "Pool 22",
-    date: "Wed, May 6",
-    dateObj: "2026-05-06",
-    time: "6:15 PM",
-    location: "Ocean Air Park",
-    court: "West Court",
-    home: "Sam Hangafarin",
-    away: "Luke Franey/Naveen Krishnamoorthy",
-    result: "upcoming",
-  },
-  {
-    id: 23,
+    id: 6,
     pool: "Pool 23",
     date: "Sat, May 9",
     dateObj: "2026-05-09",
@@ -338,31 +133,7 @@ export const GAMES: Game[] = [
     result: "upcoming",
   },
   {
-    id: 24,
-    pool: "Pool 24",
-    date: "Sat, May 9",
-    dateObj: "2026-05-09",
-    time: "11:30 AM",
-    location: "Carmel Valley Recreation Center",
-    court: "Court 1 (North)",
-    home: "Connor / Eliot / Nathan",
-    away: "Jon Ramba",
-    result: "upcoming",
-  },
-  {
-    id: 25,
-    pool: "Pool 25",
-    date: "Wed, May 13",
-    dateObj: "2026-05-13",
-    time: "5:15 PM",
-    location: "Ocean Air Park",
-    court: "West Court",
-    home: "Catherine Hancock",
-    away: "Sam Hangafarin",
-    result: "upcoming",
-  },
-  {
-    id: 26,
+    id: 7,
     pool: "Pool 26",
     date: "Wed, May 13",
     dateObj: "2026-05-13",
@@ -373,39 +144,15 @@ export const GAMES: Game[] = [
     away: "Marcus Lee/Derick Chi",
     result: "upcoming",
   },
+  // Playoffs - TBD
   {
-    id: 27,
-    pool: "Pool 27",
-    date: "Sat, May 16",
-    dateObj: "2026-05-16",
-    time: "10:30 AM",
-    location: "Carmel Valley Recreation Center",
-    court: "Court 1 (North)",
-    home: "Connor / Eliot / Nathan",
-    away: "Luke Franey/Naveen Krishnamoorthy",
-    result: "upcoming",
-  },
-  {
-    id: 28,
-    pool: "Pool 28",
-    date: "Sat, May 16",
-    dateObj: "2026-05-16",
-    time: "11:30 AM",
-    location: "Carmel Valley Recreation Center",
-    court: "Court 1 (North)",
-    home: "Jon Ramba",
-    away: "Kolt Sakofsky/Grant Clabo",
-    result: "upcoming",
-  },
-  // Playoffs
-  {
-    id: 29,
+    id: 8,
     pool: "Round 1",
     date: "Wed, May 20",
     dateObj: "2026-05-20",
-    time: "4:00 PM",
-    location: "Ocean Air Park",
-    court: "West Court",
+    time: "TBD",
+    location: "TBD",
+    court: "TBD",
     home: "TBD",
     away: "TBD",
     result: "playoff",
@@ -413,55 +160,13 @@ export const GAMES: Game[] = [
     round: "Round 1",
   },
   {
-    id: 30,
-    pool: "Round 1",
-    date: "Wed, May 20",
-    dateObj: "2026-05-20",
-    time: "4:00 PM",
-    location: "Ocean Air Park",
-    court: "East Court",
-    home: "TBD",
-    away: "TBD",
-    result: "playoff",
-    isPlayoff: true,
-    round: "Round 1",
-  },
-  {
-    id: 31,
-    pool: "Round 1",
-    date: "Wed, May 20",
-    dateObj: "2026-05-20",
-    time: "5:00 PM",
-    location: "Ocean Air Park",
-    court: "West Court",
-    home: "TBD",
-    away: "TBD",
-    result: "playoff",
-    isPlayoff: true,
-    round: "Round 1",
-  },
-  {
-    id: 32,
-    pool: "Round 1",
-    date: "Wed, May 20",
-    dateObj: "2026-05-20",
-    time: "5:00 PM",
-    location: "Ocean Air Park",
-    court: "East Court",
-    home: "TBD",
-    away: "TBD",
-    result: "playoff",
-    isPlayoff: true,
-    round: "Round 1",
-  },
-  {
-    id: 33,
+    id: 9,
     pool: "Round 2",
     date: "Wed, May 27",
     dateObj: "2026-05-27",
-    time: "5:15 PM",
-    location: "Ocean Air Park",
-    court: "West Court",
+    time: "TBD",
+    location: "TBD",
+    court: "TBD",
     home: "TBD",
     away: "TBD",
     result: "playoff",
@@ -469,27 +174,13 @@ export const GAMES: Game[] = [
     round: "Round 2",
   },
   {
-    id: 34,
-    pool: "Round 2",
-    date: "Wed, May 27",
-    dateObj: "2026-05-27",
-    time: "5:15 PM",
-    location: "Ocean Air Park",
-    court: "East Court",
-    home: "TBD",
-    away: "TBD",
-    result: "playoff",
-    isPlayoff: true,
-    round: "Round 2",
-  },
-  {
-    id: 35,
+    id: 10,
     pool: "Championship",
     date: "Sat, May 30",
     dateObj: "2026-05-30",
-    time: "9:30 AM",
-    location: "Carmel Valley Recreation Center",
-    court: "Court 1 (North)",
+    time: "TBD",
+    location: "TBD",
+    court: "TBD",
     home: "TBD",
     away: "TBD",
     result: "playoff",
@@ -498,32 +189,16 @@ export const GAMES: Game[] = [
   },
 ];
 
-// Our team's games only
-export const OUR_GAMES = GAMES.filter(
-  (g) => g.home === "Connor / Eliot / Nathan" || g.away === "Connor / Eliot / Nathan"
-);
-
-export interface Standing {
-  seed: number;
-  team: string;
-  w: number;
-  l: number;
-  t: number;
-  pd: number;
-  ps: number;
-  pa: number;
-  isOurTeam?: boolean;
-}
-
-export const STANDINGS: Standing[] = [
-  { seed: 1, team: "Catherine Hancock", w: 0, l: 0, t: 0, pd: 0, ps: 0, pa: 0 },
-  { seed: 2, team: "Luke Franey/Naveen Krishnamoorthy", w: 0, l: 0, t: 0, pd: 0, ps: 0, pa: 0 },
-  { seed: 3, team: "Marcus Lee/Derick Chi", w: 0, l: 0, t: 0, pd: 0, ps: 0, pa: 0 },
-  { seed: 4, team: "Kolt Sakofsky/Grant Clabo", w: 0, l: 0, t: 0, pd: 0, ps: 0, pa: 0 },
-  { seed: 5, team: "Jon Ramba", w: 0, l: 0, t: 0, pd: 0, ps: 0, pa: 0 },
-  { seed: 6, team: "Connor Chen/Nathan Chang/Eliot D'Argenio", w: 0, l: 0, t: 0, pd: 0, ps: 0, pa: 0 },
-  { seed: 7, team: "Connor / Eliot / Nathan", w: 0, l: 0, t: 0, pd: 0, ps: 0, pa: 0, isOurTeam: true },
-  { seed: 8, team: "Sam Hangafarin", w: 0, l: 0, t: 0, pd: 0, ps: 0, pa: 0 },
+export const PRACTICE_SCHEDULE = [
+  {
+    day: "TBD",
+    date: "TBD",
+    time: "TBD",
+    location: "TBD",
+    address: "TBD",
+    notes: "Practice schedule to be announced by coach",
+    id: 1,
+  },
 ];
 
 export interface PracticeSession {
@@ -536,71 +211,57 @@ export interface PracticeSession {
   notes?: string;
 }
 
-// Practice schedule — placeholder until user provides details
-export const PRACTICE_SCHEDULE: PracticeSession[] = [
-  {
-    id: 1,
-    day: "TBD",
-    time: "TBD",
-    location: "Carmel Valley Recreation Center or nearby location",
-    address: "3777 Townsgate Drive, San Diego, CA 92130",
-    notes: "Practice schedule to be determined by coach. Check back for updates.",
-  },
+export const ROSTER = [
+  { name: "Armaan Grewal", number: 0, grade: "3rd", position: "" },
+  { name: "Keenan Taylor", number: 0, grade: "3rd", position: "" },
+  { name: "Sondre Momper", number: 0, grade: "3rd", position: "" },
+  { name: "Aiden Chan", number: 0, grade: "3rd", position: "" },
+  { name: "Liam Ashrafzadeh", number: 0, grade: "3rd", position: "" },
+  { name: "Carter Congdon", number: 0, grade: "3rd", position: "" },
+  { name: "Eddie Viehmann", number: 0, grade: "3rd", position: "" },
+  { name: "Sritan Sirimalle", number: 0, grade: "3rd", position: "" },
 ];
 
-export interface Player {
-  number?: string;
-  name: string;
-  grade?: string;
-  position?: string;
-}
+export const OVERVIEW_INFO = {
+  teamName: "Connor / Eliot / Nathan",
+  league: "Carmel Valley Spring 2026 Basketball League",
+  season: "Spring 2026",
+  division: "Grades 3rd-4th Boys",
+  record: "0-0",
+  seed: 7,
+  locations: [
+    "Carmel Valley Recreation Center - 3777 Townsgate Drive, San Diego, CA 92130",
+    "Ocean Air Park - 4770 Fairport Way, San Diego, CA 92130",
+  ],
+  teamFormation: "Teams are formed via a draft process. All players must attend skills assessment.",
+  uniforms: "All players receive a reversible jersey and shorts to keep at the end of the season.",
+  awards: "Players on teams that finish 1st or 2nd place will receive a trophy.",
+  gameDays: "Games are played on Wednesdays (4pm/5pm/6pm start times) and Saturdays (10am-12pm start times).",
+};
 
-// Roster — Connor / Eliot / Nathan team
-export const ROSTER: Player[] = [
-  { name: "Armaan Grewal", grade: "3rd–4th" },
-  { name: "Keenan Taylor", grade: "3rd–4th" },
-  { name: "Sondre Momper", grade: "3rd–4th" },
-  { name: "Aiden Chan", grade: "3rd–4th" },
-  { name: "Liam Ashrafzadeh", grade: "3rd–4th" },
-  { name: "Carter Congdon", grade: "3rd–4th" },
-  { name: "Eddie Viehmann", grade: "3rd–4th" },
-  { name: "Sritan Sirimalle", grade: "3rd–4th" },
+export const GAME_VIDEOS: VideoEntry[] = [
+  // Videos to be added by user
+];
+
+export const OUR_TEAM = "Connor / Eliot / Nathan";
+
+export const STANDINGS = [
+  { seed: 1, team: "Catherine Hancock", w: 0, l: 0, t: 0, pd: 0, ps: 0, pa: 0, isOurTeam: false },
+  { seed: 2, team: "Luke Franey/Naveen Krishnamoorthy", w: 0, l: 0, t: 0, pd: 0, ps: 0, pa: 0, isOurTeam: false },
+  { seed: 3, team: "Marcus Lee/Derick Chi", w: 0, l: 0, t: 0, pd: 0, ps: 0, pa: 0, isOurTeam: false },
+  { seed: 4, team: "Kolt Sakofsky/Grant Clabo", w: 0, l: 0, t: 0, pd: 0, ps: 0, pa: 0, isOurTeam: false },
+  { seed: 5, team: "James McNally", w: 0, l: 0, t: 0, pd: 0, ps: 0, pa: 0, isOurTeam: false },
+  { seed: 6, team: "Jon Ramba", w: 0, l: 0, t: 0, pd: 0, ps: 0, pa: 0, isOurTeam: false },
+  { seed: 7, team: "Connor / Eliot / Nathan", w: 0, l: 0, t: 0, pd: 0, ps: 0, pa: 0, isOurTeam: true },
+  { seed: 8, team: "Sam Hangafarin", w: 0, l: 0, t: 0, pd: 0, ps: 0, pa: 0, isOurTeam: false },
 ];
 
 export interface VideoEntry {
-  id: string;
+  id: number;
   title: string;
-  youtubeId: string;
+  youtubeUrl?: string;
+  youtubeId?: string;
   date: string;
   opponent?: string;
   description?: string;
 }
-
-// Game videos — placeholder until user provides YouTube links
-export const GAME_VIDEOS: VideoEntry[] = [];
-
-export const OVERVIEW_INFO = {
-  skillsAssessment: {
-    date: "Wednesday, March 11th",
-    location: "Ocean Air Rec Center",
-    times: [
-      "4:30 PM — Grades 1st-2nd Coed",
-      "5:30 PM — Grades 3rd-4th Boys (last name A–M)",
-      "6:00 PM — Grades 3rd-4th Boys (last name N–Z)",
-      "6:30 PM — Grades 5th-6th Boys (last name A–M)",
-      "7:00 PM — Grades 5th-6th Boys (last name N–Z)",
-      "7:30 PM — Grades 7th-8th Boys",
-    ],
-  },
-  gameDays:
-    "Games are played on Wednesday evenings and Saturday mornings at Carmel Valley Recreation Center. Wednesdays: ~4PM/5PM/6PM. Saturdays: ~10AM–12PM.",
-  practiceInfo:
-    "Practice days/times are determined by the team coach. All practices will be held outdoors at Carmel Valley Rec Center or another nearby location.",
-  teamFormation:
-    "All teams are formed via a draft process. Players must attend the skills assessment. Siblings are guaranteed to play on the same team unless otherwise requested.",
-  uniforms:
-    "All players receive a reversible jersey and a pair of shorts to keep at the end of the season.",
-  awards:
-    "Players on teams finishing 1st or 2nd place will receive a trophy at the end of the season.",
-  contact: "Ryan Conroy — Ryan@MasterSports.com",
-};
