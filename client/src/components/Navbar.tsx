@@ -1,6 +1,6 @@
 /*
-  Design: Urban Athletic / Sports Editorial
-  Dark charcoal nav with orange accent, Barlow Condensed font
+  Design: Professional Modern / Teal Theme
+  Light background nav with teal accent, Barlow Condensed font
   Multi-page navigation
 */
 import { useState } from "react";
@@ -41,7 +41,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[oklch(0.13_0.008_265/0.95)] backdrop-blur-md shadow-2xl border-b border-[oklch(0.28_0.008_265)]"
+          ? "bg-[oklch(0.97_0.002_265/0.95)] backdrop-blur-md shadow-lg border-b border-[oklch(0.90_0.002_265)]"
           : "bg-transparent"
       }`}
     >
@@ -49,17 +49,17 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <div className="w-9 h-9 rounded-full bg-[oklch(0.68_0.19_42)] flex items-center justify-center shadow-lg">
-              <Trophy className="w-5 h-5 text-[oklch(0.13_0.008_265)]" />
+            <div className="w-9 h-9 rounded-full bg-[oklch(0.52_0.16_180)] flex items-center justify-center shadow-lg">
+              <Trophy className="w-5 h-5 text-white" />
             </div>
             <div>
               <div
-                className="text-white font-bold"
+                className="text-[oklch(0.20_0.008_265)] font-bold"
                 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1rem", letterSpacing: "0.05em", textTransform: "uppercase" }}
               >
                 Connor / Eliot / Nathan
               </div>
-              <div className="text-[oklch(0.55_0.01_265)] text-xs leading-none mt-0.5" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+              <div className="text-[oklch(0.50_0.01_265)] text-xs leading-none mt-0.5" style={{ fontFamily: "'DM Sans', sans-serif" }}>
                 CV Spring 2026 · 3rd–4th Boys
               </div>
             </div>
@@ -84,7 +84,7 @@ export default function Navbar() {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden text-white p-2"
+            className="md:hidden text-[oklch(0.20_0.008_265)] p-2"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -95,7 +95,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-[oklch(0.15_0.008_265)] border-t border-[oklch(0.28_0.008_265)] px-4 py-4">
+        <div className="md:hidden bg-[oklch(0.98_0.001_265)] border-t border-[oklch(0.90_0.002_265)] px-4 py-4">
           <div className="flex flex-col gap-1">
             {NAV_LINKS.map((link) => {
               const isActive = location === link.href || (isScheduleDefault && link.href === "/schedule");
@@ -107,8 +107,8 @@ export default function Navbar() {
                   onClick={handleNavClick}
                   className={`text-left px-3 py-2 rounded text-sm font-semibold uppercase tracking-wider transition-colors ${
                     isActive
-                      ? "text-[oklch(0.68_0.19_42)] bg-[oklch(0.20_0.008_265)]"
-                      : "text-[oklch(0.65_0.01_265)] hover:text-white"
+                      ? "text-[oklch(0.52_0.16_180)] bg-[oklch(0.90_0.002_265)]"
+                      : "text-[oklch(0.50_0.01_265)] hover:text-[oklch(0.52_0.16_180)]"
                   }`}
                   style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.08em" }}
                 >

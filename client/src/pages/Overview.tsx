@@ -16,17 +16,17 @@ const InfoCard = ({
   title: string;
   children: React.ReactNode;
 }) => (
-  <div className="bg-[oklch(0.17_0.008_265)] border border-[oklch(0.28_0.008_265)] rounded-sm p-5 hover:border-[oklch(0.68_0.19_42/0.4)] transition-colors duration-200">
+  <div className="bg-oklch(1_0_0) border border-[oklch(0.90_0.002_265)] rounded-sm p-5 hover:border-[oklch(0.52_0.16_180/0.4)] transition-colors duration-200">
     <div className="flex items-center gap-2 mb-3">
-      <Icon className="w-4 h-4 text-[oklch(0.68_0.19_42)]" />
+      <Icon className="w-4 h-4 text-[oklch(0.52_0.16_180)]" />
       <span
         className="section-label"
-        style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.12em", fontSize: "0.72rem", color: "oklch(0.68 0.19 42)" }}
+        style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.12em", fontSize: "0.72rem", color: "oklch(0.52 0.16 180)" }}
       >
         {title}
       </span>
     </div>
-    <div className="text-[oklch(0.78_0.005_265)] text-sm leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+    <div className="text-[oklch(0.20_0.008_265)] text-sm leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif" }}>
       {children}
     </div>
   </div>
@@ -39,18 +39,18 @@ export default function Overview() {
         {/* Left: info cards */}
         <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
           <InfoCard icon={Calendar} title="Season Dates">
-            <strong className="text-white">March 21 – May 30, 2026</strong>
+            <strong className="text-[oklch(0.20_0.008_265)]">March 21 – May 30, 2026</strong>
             <br />
             Registration: Jan 21 – Apr 1, 2026
           </InfoCard>
 
           <InfoCard icon={MapPin} title="Locations">
-            <strong className="text-white">Carmel Valley Recreation Center</strong>
+            <strong className="text-[oklch(0.20_0.008_265)]">Carmel Valley Recreation Center</strong>
             <br />
             3777 Townsgate Drive, San Diego, CA 92130
             <br />
             <br />
-            <strong className="text-white">Ocean Air Park</strong>
+            <strong className="text-[oklch(0.20_0.008_265)]">Ocean Air Park</strong>
             <br />
             4770 Fairport Way, San Diego, CA 92130
           </InfoCard>
@@ -75,7 +75,7 @@ export default function Overview() {
         {/* Right: court image + quick stats */}
         <div className="flex flex-col gap-4">
           <div
-            className="rounded-sm overflow-hidden border border-[oklch(0.28_0.008_265)]"
+            className="rounded-sm overflow-hidden border border-[oklch(0.90_0.002_265)]"
             style={{ aspectRatio: "4/3" }}
           >
             <img

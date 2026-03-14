@@ -13,17 +13,17 @@ export default function RosterPage() {
   return (
     <PageLayout title="Roster" subtitle="Team Members">
       {!hasRealRoster ? (
-        <div className="bg-[oklch(0.17_0.008_265)] border border-[oklch(0.28_0.008_265)] border-l-4 rounded-sm p-6" style={{ borderLeftColor: "oklch(0.68 0.19 42)" }}>
+        <div className="bg-oklch(1_0_0) border border-[oklch(0.90_0.002_265)] border-l-4 rounded-sm p-6" style={{ borderLeftColor: "oklch(0.52 0.16 180)" }}>
           <div className="flex items-start gap-3">
-            <AlertCircle className="w-5 h-5 text-[oklch(0.68_0.19_42)] flex-shrink-0 mt-0.5" />
+            <AlertCircle className="w-5 h-5 text-[oklch(0.52_0.16_180)] flex-shrink-0 mt-0.5" />
             <div>
               <div
-                className="text-white font-bold mb-2"
+                className="text-[oklch(0.20_0.008_265)] font-bold mb-2"
                 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.1rem", textTransform: "uppercase", letterSpacing: "0.05em" }}
               >
                 Roster Coming Soon
               </div>
-              <p className="text-[oklch(0.65_0.01_265)] text-sm leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+              <p className="text-[oklch(0.50_0.01_265)] text-sm leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif" }}>
                 The player roster will be updated once provided. Teams are formed via a draft process after the skills assessment.
               </p>
             </div>
@@ -35,12 +35,12 @@ export default function RosterPage() {
           {ROSTER.map((player, idx) => (
             <div
               key={idx}
-              className="bg-[oklch(0.17_0.008_265)] border border-[oklch(0.28_0.008_265)] rounded-sm p-4 text-center hover:border-[oklch(0.68_0.19_42/0.4)] transition-colors duration-200"
+              className="bg-oklch(1_0_0) border border-[oklch(0.90_0.002_265)] rounded-sm p-4 text-center hover:border-[oklch(0.52_0.16_180/0.4)] transition-colors duration-200"
             >
               {/* Jersey number */}
               {player.number && (
                 <div
-                  className="text-[oklch(0.68_0.19_42)] font-bold mb-2"
+                  className="text-[oklch(0.52_0.16_180)] font-bold mb-2"
                   style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "2rem", lineHeight: 1 }}
                 >
                   #{player.number}
@@ -49,25 +49,25 @@ export default function RosterPage() {
 
               {/* Avatar placeholder */}
               {!player.number && (
-                <div className="w-12 h-12 rounded-full bg-[oklch(0.22_0.008_265)] flex items-center justify-center mx-auto mb-3">
-                  <User className="w-6 h-6 text-[oklch(0.45_0.01_265)]" />
+                <div className="w-12 h-12 rounded-full bg-[oklch(0.90_0.002_265)] flex items-center justify-center mx-auto mb-3">
+                  <User className="w-6 h-6 text-[oklch(0.50_0.01_265)]" />
                 </div>
               )}
 
               <div
-                className="text-white font-bold text-sm"
+                className="text-[oklch(0.20_0.008_265)] font-bold text-sm"
                 style={{ fontFamily: "'Barlow Condensed', sans-serif", textTransform: "uppercase", letterSpacing: "0.03em" }}
               >
                 {player.name}
               </div>
               {player.grade && (
-                <div className="text-[oklch(0.55_0.01_265)] text-xs mt-1" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                <div className="text-[oklch(0.50_0.01_265)] text-xs mt-1" style={{ fontFamily: "'DM Sans', sans-serif" }}>
                   {player.grade}
                 </div>
               )}
               {player.position && (
                 <div
-                  className="text-[oklch(0.68_0.19_42)] text-xs mt-1 font-bold uppercase"
+                  className="text-[oklch(0.52_0.16_180)] text-xs mt-1 font-bold uppercase"
                   style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.08em" }}
                 >
                   {player.position}
