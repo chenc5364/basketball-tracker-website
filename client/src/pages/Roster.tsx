@@ -10,95 +10,22 @@ const BASKETBALL_TEXTURE = "https://d2xsxph8kpxj0f.cloudfront.net/31051966343604
 export default function RosterPage() {
   const hasRealRoster = ROSTER.length > 0 && ROSTER[0].name !== "Player roster to be provided by coach";
 
-  const allTeams = [
-    "Catherine Hancock",
-    "Luke Franey / Naveen Krishnamoorthy",
-    "Marcus Lee / Derick Chi",
-    "Kolt Sakofsky / Grant Clabo",
-    "Jon Ramba",
-    "Connor Chen / Nathan Chang / Eliot D'Argenio",
-    "Connor / Eliot / Nathan",
-    "Sam Hangafarin",
-  ];
-
   return (
     <PageLayout title="Roster" subtitle="Team Members">
       {!hasRealRoster ? (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Placeholder notice */}
-          <div>
-            <div className="bg-[oklch(0.17_0.008_265)] border border-[oklch(0.28_0.008_265)] border-l-4 rounded-sm p-6 mb-6" style={{ borderLeftColor: "oklch(0.68 0.19 42)" }}>
-              <div className="flex items-start gap-3">
-                <AlertCircle className="w-5 h-5 text-[oklch(0.68_0.19_42)] flex-shrink-0 mt-0.5" />
-                <div>
-                  <div
-                    className="text-white font-bold mb-2"
-                    style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.1rem", textTransform: "uppercase", letterSpacing: "0.05em" }}
-                  >
-                    Roster Coming Soon
-                  </div>
-                  <p className="text-[oklch(0.65_0.01_265)] text-sm leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                    The player roster will be updated once provided. Teams are formed via a draft process after the skills assessment.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* All teams in division */}
-            <div className="bg-[oklch(0.17_0.008_265)] border border-[oklch(0.28_0.008_265)] rounded-sm p-6">
+        <div className="bg-[oklch(0.17_0.008_265)] border border-[oklch(0.28_0.008_265)] border-l-4 rounded-sm p-6" style={{ borderLeftColor: "oklch(0.68 0.19 42)" }}>
+          <div className="flex items-start gap-3">
+            <AlertCircle className="w-5 h-5 text-[oklch(0.68_0.19_42)] flex-shrink-0 mt-0.5" />
+            <div>
               <div
-                className="text-[oklch(0.68_0.19_42)] text-xs font-bold uppercase tracking-widest mb-4"
-                style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+                className="text-white font-bold mb-2"
+                style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.1rem", textTransform: "uppercase", letterSpacing: "0.05em" }}
               >
-                All Teams in Division
+                Roster Coming Soon
               </div>
-              <div className="space-y-2">
-                {allTeams.map((team, i) => (
-                  <div
-                    key={team}
-                    className={`flex items-center gap-3 py-2 px-3 rounded-sm ${
-                      team === "Connor / Eliot / Nathan"
-                        ? "bg-[oklch(0.22_0.015_42/0.3)] border border-[oklch(0.68_0.19_42/0.3)]"
-                        : "hover:bg-[oklch(0.20_0.008_265)]"
-                    } transition-colors duration-150`}
-                  >
-                    <span
-                      className="text-[oklch(0.45_0.01_265)] font-bold text-sm w-5 text-center"
-                      style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
-                    >
-                      {i + 1}
-                    </span>
-                    <span
-                      className={`font-semibold text-sm ${team === "Connor / Eliot / Nathan" ? "text-[oklch(0.68_0.19_42)]" : "text-white"}`}
-                      style={{ fontFamily: "'Barlow Condensed', sans-serif", textTransform: "uppercase", letterSpacing: "0.03em" }}
-                    >
-                      {team}
-                    </span>
-                    {team === "Connor / Eliot / Nathan" && (
-                      <span
-                        className="ml-auto text-xs px-2 py-0.5 bg-[oklch(0.68_0.19_42/0.2)] text-[oklch(0.68_0.19_42)] rounded-sm font-bold uppercase"
-                        style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.08em" }}
-                      >
-                        Our Team
-                      </span>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Basketball texture image */}
-          <div className="hidden lg:flex items-center justify-center">
-            <div
-              className="rounded-sm overflow-hidden border border-[oklch(0.28_0.008_265)] w-full"
-              style={{ aspectRatio: "1/1", maxWidth: "400px" }}
-            >
-              <img
-                src={BASKETBALL_TEXTURE}
-                alt="Basketball"
-                className="w-full h-full object-cover opacity-70"
-              />
+              <p className="text-[oklch(0.65_0.01_265)] text-sm leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                The player roster will be updated once provided. Teams are formed via a draft process after the skills assessment.
+              </p>
             </div>
           </div>
         </div>
