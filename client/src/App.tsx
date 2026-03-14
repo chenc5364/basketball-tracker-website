@@ -3,13 +3,24 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import Home from "./pages/Home";
+import Overview from "./pages/Overview";
+import Schedule from "./pages/Schedule";
+import Practices from "./pages/Practices";
+import StandingsPage from "./pages/Standings";
+import RosterPage from "./pages/Roster";
+import VideosPage from "./pages/Videos";
 
 function Router() {
   return (
     <Switch>
-      <Route path={"/"} component={Home} />
-      <Route component={Home} />
+      <Route path={"/"} component={Overview} />
+      <Route path={"/schedule"} component={Schedule} />
+      <Route path={"/practices"} component={Practices} />
+      <Route path={"/standings"} component={StandingsPage} />
+      <Route path={"/roster"} component={RosterPage} />
+      <Route path={"/videos"} component={VideosPage} />
+      {/* Final fallback route */}
+      <Route component={Overview} />
     </Switch>
   );
 }
