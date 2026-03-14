@@ -12,13 +12,14 @@ import VideosPage from "./pages/Videos";
 function Router() {
   return (
     <Switch>
-      <Route path={"/"} component={Overview} />
+      <Route path={"/"} component={ScheduleAndPractices} />
+      <Route path={"/overview"} component={Overview} />
       <Route path={"/schedule"} component={ScheduleAndPractices} />
       <Route path={"/standings"} component={StandingsPage} />
       <Route path={"/roster"} component={RosterPage} />
       <Route path={"/videos"} component={VideosPage} />
       {/* Final fallback route */}
-      <Route component={Overview} />
+      <Route component={ScheduleAndPractices} />
     </Switch>
   );
 }

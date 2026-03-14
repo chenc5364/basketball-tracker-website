@@ -555,9 +555,16 @@ export interface Player {
   position?: string;
 }
 
-// Roster — placeholder until user provides details
+// Roster — Connor / Eliot / Nathan team
 export const ROSTER: Player[] = [
-  { name: "Player roster to be provided by coach", grade: "3rd–4th" },
+  { name: "Armaan Grewal", grade: "3rd–4th" },
+  { name: "Keenan Taylor", grade: "3rd–4th" },
+  { name: "Sondre Momper", grade: "3rd–4th" },
+  { name: "Aiden Chan", grade: "3rd–4th" },
+  { name: "Liam Ashrafzadeh", grade: "3rd–4th" },
+  { name: "Carter Congdon", grade: "3rd–4th" },
+  { name: "Eddie Viehmann", grade: "3rd–4th" },
+  { name: "Sritan Sirimalle", grade: "3rd–4th" },
 ];
 
 export interface VideoEntry {

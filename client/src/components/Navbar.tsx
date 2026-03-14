@@ -9,7 +9,7 @@ import { Menu, X, Trophy } from "lucide-react";
 import { useLocation } from "wouter";
 
 const NAV_LINKS = [
-  { label: "Overview", href: "/" },
+  { label: "Overview", href: "/overview" },
   { label: "Schedule", href: "/schedule" },
   { label: "Standings", href: "/standings" },
   { label: "Roster", href: "/roster" },
@@ -21,8 +21,8 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [location] = useLocation();
 
-  // Determine active page
-  const currentPage = location === "/" ? "overview" : location.replace("/", "").split("/")[0];
+  // Determine active page - Schedule is now the default
+  const isScheduleDefault = location === "/";
 
   const handleScroll = () => {
     setScrolled(window.scrollY > 20);
@@ -68,7 +68,8 @@ export default function Navbar() {
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-6">
             {NAV_LINKS.map((link) => {
-              const isActive = link.href === "/" ? currentPage === "overview" : location === link.href;
+              const isActive = location === link.href || (isScheduleDefault && link.href === "/schedule");
+
               return (
                 <a
                   key={link.href}
@@ -97,7 +98,8 @@ export default function Navbar() {
         <div className="md:hidden bg-[oklch(0.15_0.008_265)] border-t border-[oklch(0.28_0.008_265)] px-4 py-4">
           <div className="flex flex-col gap-1">
             {NAV_LINKS.map((link) => {
-              const isActive = link.href === "/" ? currentPage === "overview" : location === link.href;
+              const isActive = location === link.href || (isScheduleDefault && link.href === "/schedule");
+
               return (
                 <a
                   key={link.href}
