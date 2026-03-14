@@ -5,7 +5,7 @@ import { MapPin, Clock, Calendar } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import { GAMES, type Game } from "@/lib/data";
 
-const OUR_TEAM = "Connor Chen";
+const OUR_TEAM = "Connor / Eliot / Nathan";
 
 function getResultBadge(game: Game) {
   if (game.isPlayoff) {

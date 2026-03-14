@@ -1,16 +1,16 @@
 // Basketball Tracker Data
 // Carmel Valley Spring 2026 Basketball League — Grades 3rd-4th Boys
-// Team: Connor Chen (Team #7 in standings) - Connor Chen solo team
+// Team: Connor / Eliot / Nathan (Team #7 in standings)
 
 export const TEAM_INFO = {
-  teamName: "Connor Chen",
+  teamName: "Connor / Eliot / Nathan",
   league: "Carmel Valley Spring 2026 Basketball League",
   division: "Grades 3rd-4th Boys",
   season: "Spring 2026",
   dates: "March 21 – May 30, 2026",
   grades: "Grades 3–4",
   gender: "Boys",
-  coachNames: "Connor Chen",
+  coachNames: "Connor / Eliot / Nathan",
   locations: [
     {
       name: "Carmel Valley Recreation Center",
@@ -32,7 +32,7 @@ export const TEAMS = [
   "Luke Franey/Naveen Krishnamoorthy",
   "Marcus Lee/Derick Chi",
   "Kolt Sakofsky/Grant Clabo",
-  "Connor Chen",
+  "Connor / Eliot / Nathan",
   "Jon Ramba",
   "Connor Chen / Nathan Chang / Eliot D'Argenio",
   "Sam Hangafarin",
@@ -57,7 +57,7 @@ export interface Game {
   round?: string;
 }
 
-// Our team is "Connor Chen"
+// Our team is "Connor / Eliot / Nathan"
 // result is from our team's perspective
 export const GAMES: Game[] = [
   // Regular Season
@@ -81,7 +81,7 @@ export const GAMES: Game[] = [
     time: "11:30 AM",
     location: "Carmel Valley Recreation Center",
     court: "Court 1 (North)",
-    home: "Connor Chen",
+    home: "Connor / Eliot / Nathan",
     away: "Sam Hangafarin",
     result: "upcoming",
   },
@@ -117,7 +117,7 @@ export const GAMES: Game[] = [
     time: "5:15 PM",
     location: "Ocean Air Park",
     court: "West Court",
-    home: "Connor Chen",
+    home: "Connor / Eliot / Nathan",
     away: "Catherine Hancock",
     result: "upcoming",
   },
@@ -178,7 +178,7 @@ export const GAMES: Game[] = [
     location: "Ocean Air Park",
     court: "West Court",
     home: "Kolt Sakofsky/Grant Clabo",
-    away: "Connor Chen",
+    away: "Connor / Eliot / Nathan",
     result: "upcoming",
   },
   {
@@ -238,7 +238,7 @@ export const GAMES: Game[] = [
     location: "Carmel Valley Recreation Center",
     court: "Court 1 (North)",
     home: "Marcus Lee/Derick Chi",
-    away: "Connor Chen",
+    away: "Connor / Eliot / Nathan",
     result: "upcoming",
   },
   {
@@ -298,7 +298,7 @@ export const GAMES: Game[] = [
     location: "Carmel Valley Recreation Center",
     court: "Court 1 (North)",
     home: "Connor Chen / Nathan Chang / Eliot D'Argenio",
-    away: "Connor Chen",
+    away: "Connor / Eliot / Nathan",
     result: "upcoming",
   },
   {
@@ -345,7 +345,7 @@ export const GAMES: Game[] = [
     time: "11:30 AM",
     location: "Carmel Valley Recreation Center",
     court: "Court 1 (North)",
-    home: "Connor Chen",
+    home: "Connor / Eliot / Nathan",
     away: "Jon Ramba",
     result: "upcoming",
   },
@@ -381,7 +381,7 @@ export const GAMES: Game[] = [
     time: "10:30 AM",
     location: "Carmel Valley Recreation Center",
     court: "Court 1 (North)",
-    home: "Connor Chen",
+    home: "Connor / Eliot / Nathan",
     away: "Luke Franey/Naveen Krishnamoorthy",
     result: "upcoming",
   },
@@ -500,7 +500,7 @@ export const GAMES: Game[] = [
 
 // Our team's games only
 export const OUR_GAMES = GAMES.filter(
-  (g) => g.home === "Connor Chen" || g.away === "Connor Chen"
+  (g) => g.home === "Connor / Eliot / Nathan" || g.away === "Connor / Eliot / Nathan"
 );
 
 export interface Standing {
@@ -522,7 +522,7 @@ export const STANDINGS: Standing[] = [
   { seed: 4, team: "Kolt Sakofsky/Grant Clabo", w: 0, l: 0, t: 0, pd: 0, ps: 0, pa: 0 },
   { seed: 5, team: "Jon Ramba", w: 0, l: 0, t: 0, pd: 0, ps: 0, pa: 0 },
   { seed: 6, team: "Connor Chen/Nathan Chang/Eliot D'Argenio", w: 0, l: 0, t: 0, pd: 0, ps: 0, pa: 0 },
-  { seed: 7, team: "Connor Chen", w: 0, l: 0, t: 0, pd: 0, ps: 0, pa: 0, isOurTeam: true },
+  { seed: 7, team: "Connor / Eliot / Nathan", w: 0, l: 0, t: 0, pd: 0, ps: 0, pa: 0, isOurTeam: true },
   { seed: 8, team: "Sam Hangafarin", w: 0, l: 0, t: 0, pd: 0, ps: 0, pa: 0 },
 ];
 

@@ -19,7 +19,7 @@ export default function Footer() {
                 className="text-white font-bold"
                 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1rem", letterSpacing: "0.05em", textTransform: "uppercase" }}
               >
-                Connor Chen
+                Connor / Eliot / Nathan
               </div>
               <div className="text-[oklch(0.45_0.01_265)] text-xs" style={{ fontFamily: "'DM Sans', sans-serif" }}>
                 Carmel Valley Spring 2026 · 3rd–4th Boys

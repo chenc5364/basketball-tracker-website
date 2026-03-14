@@ -4,13 +4,13 @@
   Multi-page navigation
 */
 import { useState } from "react";
+import * as React from "react";
 import { Menu, X, Trophy } from "lucide-react";
 import { useLocation } from "wouter";
 
 const NAV_LINKS = [
   { label: "Overview", href: "/" },
   { label: "Schedule", href: "/schedule" },
-  { label: "Practices", href: "/practices" },
   { label: "Standings", href: "/standings" },
   { label: "Roster", href: "/roster" },
   { label: "Videos", href: "/videos" },
@@ -22,13 +22,16 @@ export default function Navbar() {
   const [location] = useLocation();
 
   // Determine active page
-  const currentPage = location === "/" ? "overview" : location.replace("/", "");
+  const currentPage = location === "/" ? "overview" : location.replace("/", "").split("/")[0];
 
   const handleScroll = () => {
     setScrolled(window.scrollY > 20);
   };
 
-  window.addEventListener("scroll", handleScroll, { passive: true });
+  React.useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleNavClick = () => {
     setMobileOpen(false);
@@ -51,10 +54,10 @@ export default function Navbar() {
             </div>
             <div>
               <div
-                className="text-white font-bold leading-none"
-                style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.1rem", letterSpacing: "0.05em", textTransform: "uppercase" }}
+                className="text-white font-bold"
+                style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1rem", letterSpacing: "0.05em", textTransform: "uppercase" }}
               >
-                Connor Chen
+                Connor / Eliot / Nathan
               </div>
               <div className="text-[oklch(0.55_0.01_265)] text-xs leading-none mt-0.5" style={{ fontFamily: "'DM Sans', sans-serif" }}>
                 CV Spring 2026 · 3rd–4th Boys

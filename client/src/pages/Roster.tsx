@@ -17,7 +17,7 @@ export default function RosterPage() {
     "Kolt Sakofsky / Grant Clabo",
     "Jon Ramba",
     "Connor Chen / Nathan Chang / Eliot D'Argenio",
-    "Connor Chen",
+    "Connor / Eliot / Nathan",
     "Sam Hangafarin",
   ];
 
@@ -57,7 +57,7 @@ export default function RosterPage() {
                   <div
                     key={team}
                     className={`flex items-center gap-3 py-2 px-3 rounded-sm ${
-                      team === "Connor Chen"
+                      team === "Connor / Eliot / Nathan"
                         ? "bg-[oklch(0.22_0.015_42/0.3)] border border-[oklch(0.68_0.19_42/0.3)]"
                         : "hover:bg-[oklch(0.20_0.008_265)]"
                     } transition-colors duration-150`}
@@ -69,12 +69,12 @@ export default function RosterPage() {
                       {i + 1}
                     </span>
                     <span
-                      className={`font-semibold text-sm ${team === "Connor Chen" ? "text-[oklch(0.68_0.19_42)]" : "text-white"}`}
+                      className={`font-semibold text-sm ${team === "Connor / Eliot / Nathan" ? "text-[oklch(0.68_0.19_42)]" : "text-white"}`}
                       style={{ fontFamily: "'Barlow Condensed', sans-serif", textTransform: "uppercase", letterSpacing: "0.03em" }}
                     >
                       {team}
                     </span>
-                    {team === "Connor Chen" && (
+                    {team === "Connor / Eliot / Nathan" && (
                       <span
                         className="ml-auto text-xs px-2 py-0.5 bg-[oklch(0.68_0.19_42/0.2)] text-[oklch(0.68_0.19_42)] rounded-sm font-bold uppercase"
                         style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.08em" }}
