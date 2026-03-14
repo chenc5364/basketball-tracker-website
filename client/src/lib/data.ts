@@ -1,15 +1,16 @@
 // Basketball Tracker Data
 // Carmel Valley Spring 2026 Basketball League — Grades 3rd-4th Boys
-// Team: James McNally (Team #5 in standings)
+// Team: Connor Chen (Team #7 in standings) - Connor Chen solo team
 
 export const TEAM_INFO = {
-  teamName: "James McNally",
+  teamName: "Connor Chen",
   league: "Carmel Valley Spring 2026 Basketball League",
   division: "Grades 3rd-4th Boys",
   season: "Spring 2026",
   dates: "March 21 – May 30, 2026",
   grades: "Grades 3–4",
   gender: "Boys",
+  coachNames: "Connor Chen",
   locations: [
     {
       name: "Carmel Valley Recreation Center",
@@ -31,9 +32,9 @@ export const TEAMS = [
   "Luke Franey/Naveen Krishnamoorthy",
   "Marcus Lee/Derick Chi",
   "Kolt Sakofsky/Grant Clabo",
-  "James McNally",
+  "Connor Chen",
   "Jon Ramba",
-  "Connor Chen/Nathan Chang/Eliot D'Argenio",
+  "Connor Chen / Nathan Chang / Eliot D'Argenio",
   "Sam Hangafarin",
 ];
 
@@ -56,7 +57,7 @@ export interface Game {
   round?: string;
 }
 
-// Our team is "James McNally"
+// Our team is "Connor Chen"
 // result is from our team's perspective
 export const GAMES: Game[] = [
   // Regular Season
@@ -80,7 +81,7 @@ export const GAMES: Game[] = [
     time: "11:30 AM",
     location: "Carmel Valley Recreation Center",
     court: "Court 1 (North)",
-    home: "James McNally",
+    home: "Connor Chen",
     away: "Sam Hangafarin",
     result: "upcoming",
   },
@@ -116,7 +117,7 @@ export const GAMES: Game[] = [
     time: "5:15 PM",
     location: "Ocean Air Park",
     court: "West Court",
-    home: "James McNally",
+    home: "Connor Chen",
     away: "Catherine Hancock",
     result: "upcoming",
   },
@@ -177,7 +178,7 @@ export const GAMES: Game[] = [
     location: "Ocean Air Park",
     court: "West Court",
     home: "Kolt Sakofsky/Grant Clabo",
-    away: "James McNally",
+    away: "Connor Chen",
     result: "upcoming",
   },
   {
@@ -237,7 +238,7 @@ export const GAMES: Game[] = [
     location: "Carmel Valley Recreation Center",
     court: "Court 1 (North)",
     home: "Marcus Lee/Derick Chi",
-    away: "James McNally",
+    away: "Connor Chen",
     result: "upcoming",
   },
   {
@@ -296,8 +297,8 @@ export const GAMES: Game[] = [
     time: "11:30 AM",
     location: "Carmel Valley Recreation Center",
     court: "Court 1 (North)",
-    home: "Connor Chen/Nathan Chang/Eliot D'Argenio",
-    away: "James McNally",
+    home: "Connor Chen / Nathan Chang / Eliot D'Argenio",
+    away: "Connor Chen",
     result: "upcoming",
   },
   {
@@ -344,7 +345,7 @@ export const GAMES: Game[] = [
     time: "11:30 AM",
     location: "Carmel Valley Recreation Center",
     court: "Court 1 (North)",
-    home: "James McNally",
+    home: "Connor Chen",
     away: "Jon Ramba",
     result: "upcoming",
   },
@@ -380,7 +381,7 @@ export const GAMES: Game[] = [
     time: "10:30 AM",
     location: "Carmel Valley Recreation Center",
     court: "Court 1 (North)",
-    home: "James McNally",
+    home: "Connor Chen",
     away: "Luke Franey/Naveen Krishnamoorthy",
     result: "upcoming",
   },
@@ -499,7 +500,7 @@ export const GAMES: Game[] = [
 
 // Our team's games only
 export const OUR_GAMES = GAMES.filter(
-  (g) => g.home === "James McNally" || g.away === "James McNally"
+  (g) => g.home === "Connor Chen" || g.away === "Connor Chen"
 );
 
 export interface Standing {
@@ -519,9 +520,9 @@ export const STANDINGS: Standing[] = [
   { seed: 2, team: "Luke Franey/Naveen Krishnamoorthy", w: 0, l: 0, t: 0, pd: 0, ps: 0, pa: 0 },
   { seed: 3, team: "Marcus Lee/Derick Chi", w: 0, l: 0, t: 0, pd: 0, ps: 0, pa: 0 },
   { seed: 4, team: "Kolt Sakofsky/Grant Clabo", w: 0, l: 0, t: 0, pd: 0, ps: 0, pa: 0 },
-  { seed: 5, team: "James McNally", w: 0, l: 0, t: 0, pd: 0, ps: 0, pa: 0, isOurTeam: true },
-  { seed: 6, team: "Jon Ramba", w: 0, l: 0, t: 0, pd: 0, ps: 0, pa: 0 },
-  { seed: 7, team: "Connor Chen/Nathan Chang/Eliot D'Argenio", w: 0, l: 0, t: 0, pd: 0, ps: 0, pa: 0 },
+  { seed: 5, team: "Jon Ramba", w: 0, l: 0, t: 0, pd: 0, ps: 0, pa: 0 },
+  { seed: 6, team: "Connor Chen/Nathan Chang/Eliot D'Argenio", w: 0, l: 0, t: 0, pd: 0, ps: 0, pa: 0 },
+  { seed: 7, team: "Connor Chen", w: 0, l: 0, t: 0, pd: 0, ps: 0, pa: 0, isOurTeam: true },
   { seed: 8, team: "Sam Hangafarin", w: 0, l: 0, t: 0, pd: 0, ps: 0, pa: 0 },
 ];
 

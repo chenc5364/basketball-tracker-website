@@ -54,7 +54,7 @@ export default function Navbar() {
                 className="text-white font-bold leading-none"
                 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.1rem", letterSpacing: "0.05em", textTransform: "uppercase" }}
               >
-                James McNally
+                Connor Chen
               </div>
               <div className="text-[oklch(0.55_0.01_265)] text-xs leading-none mt-0.5" style={{ fontFamily: "'DM Sans', sans-serif" }}>
                 CV Spring 2026 · 3rd–4th Boys

@@ -10,6 +10,17 @@ const BASKETBALL_TEXTURE = "https://d2xsxph8kpxj0f.cloudfront.net/31051966343604
 export default function RosterPage() {
   const hasRealRoster = ROSTER.length > 0 && ROSTER[0].name !== "Player roster to be provided by coach";
 
+  const allTeams = [
+    "Catherine Hancock",
+    "Luke Franey / Naveen Krishnamoorthy",
+    "Marcus Lee / Derick Chi",
+    "Kolt Sakofsky / Grant Clabo",
+    "Jon Ramba",
+    "Connor Chen / Nathan Chang / Eliot D'Argenio",
+    "Connor Chen",
+    "Sam Hangafarin",
+  ];
+
   return (
     <PageLayout title="Roster" subtitle="Team Members">
       {!hasRealRoster ? (
@@ -42,20 +53,11 @@ export default function RosterPage() {
                 All Teams in Division
               </div>
               <div className="space-y-2">
-                {[
-                  "Catherine Hancock",
-                  "Luke Franey / Naveen Krishnamoorthy",
-                  "Marcus Lee / Derick Chi",
-                  "Kolt Sakofsky / Grant Clabo",
-                  "James McNally",
-                  "Jon Ramba",
-                  "Connor Chen / Nathan Chang / Eliot D'Argenio",
-                  "Sam Hangafarin",
-                ].map((team, i) => (
+                {allTeams.map((team, i) => (
                   <div
                     key={team}
                     className={`flex items-center gap-3 py-2 px-3 rounded-sm ${
-                      team.includes("James McNally")
+                      team === "Connor Chen"
                         ? "bg-[oklch(0.22_0.015_42/0.3)] border border-[oklch(0.68_0.19_42/0.3)]"
                         : "hover:bg-[oklch(0.20_0.008_265)]"
                     } transition-colors duration-150`}
@@ -67,12 +69,12 @@ export default function RosterPage() {
                       {i + 1}
                     </span>
                     <span
-                      className={`font-semibold text-sm ${team.includes("James McNally") ? "text-[oklch(0.68_0.19_42)]" : "text-white"}`}
+                      className={`font-semibold text-sm ${team === "Connor Chen" ? "text-[oklch(0.68_0.19_42)]" : "text-white"}`}
                       style={{ fontFamily: "'Barlow Condensed', sans-serif", textTransform: "uppercase", letterSpacing: "0.03em" }}
                     >
                       {team}
                     </span>
-                    {team.includes("James McNally") && (
+                    {team === "Connor Chen" && (
                       <span
                         className="ml-auto text-xs px-2 py-0.5 bg-[oklch(0.68_0.19_42/0.2)] text-[oklch(0.68_0.19_42)] rounded-sm font-bold uppercase"
                         style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.08em" }}
