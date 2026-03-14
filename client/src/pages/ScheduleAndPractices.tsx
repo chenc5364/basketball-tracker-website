@@ -25,42 +25,35 @@ function GameCard({ game }: { game: Game }) {
 
   return (
     <div
-      className="game-card rounded-sm p-4 border-l-[oklch(0.68_0.19_42)]"
+      className="game-card rounded-sm overflow-hidden border-l-4 border-l-[oklch(0.68_0.19_42)]"
       style={{ borderLeftColor: "oklch(0.68 0.19 42)" }}
     >
-      {/* Top row: date, time, pool, badge */}
-      <div className="flex items-center justify-between gap-2 mb-3 flex-wrap">
-        <div className="flex items-center gap-3">
-          <div className="flex items-center gap-1.5 text-[oklch(0.55_0.01_265)]">
-            <Calendar className="w-3.5 h-3.5" />
-            <span
-              className="text-xs font-semibold"
-              style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.05em" }}
-            >
+      {/* Prominent date/time header */}
+      <div className="bg-[oklch(0.22_0.015_42)] px-4 py-3 border-b border-[oklch(0.28_0.008_265)]">
+        <div className="flex items-center justify-between gap-3">
+          <div className="flex-1">
+            <div className="text-[oklch(0.68_0.19_42)] font-bold" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.3rem", letterSpacing: "0.05em", textTransform: "uppercase" }}>
               {game.date}
-            </span>
+            </div>
+            <div className="flex items-center gap-2 mt-1">
+              <Clock className="w-4 h-4 text-[oklch(0.68_0.19_42)]" />
+              <span className="text-[oklch(0.68_0.19_42)] font-bold" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1rem", letterSpacing: "0.05em" }}>
+                {game.time}
+              </span>
+              <span className="text-[oklch(0.45_0.01_265)] text-xs ml-auto" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em" }}>
+                {game.pool}
+              </span>
+            </div>
           </div>
-          <div className="flex items-center gap-1.5 text-[oklch(0.55_0.01_265)]">
-            <Clock className="w-3.5 h-3.5" />
-            <span
-              className="text-xs font-semibold"
-              style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.05em" }}
-            >
-              {game.time}
-            </span>
-          </div>
-          <span
-            className="text-xs text-[oklch(0.45_0.01_265)]"
-            style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em" }}
-          >
-            {game.pool}
-          </span>
+          <div className="text-right">{getResultBadge(game)}</div>
         </div>
-        <div>{getResultBadge(game)}</div>
       </div>
 
+      {/* Game content */}
+      <div className="p-4">
+
       {/* Teams */}
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3 mb-3">
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-1">
             <span
@@ -135,6 +128,7 @@ function GameCard({ game }: { game: Game }) {
         <span className="text-xs truncate" style={{ fontFamily: "'DM Sans', sans-serif" }}>
           {game.location} — {game.court}
         </span>
+      </div>
       </div>
     </div>
   );
