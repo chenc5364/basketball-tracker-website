@@ -9,8 +9,8 @@ import { Menu, X, Trophy } from "lucide-react";
 import { useLocation } from "wouter";
 
 const NAV_LINKS = [
-  { label: "Schedule", href: "/schedule" },
   { label: "Overview", href: "/overview" },
+  { label: "Schedule", href: "/schedule" },
   { label: "Standings", href: "/standings" },
   { label: "Roster", href: "/roster" },
   { label: "Videos", href: "/videos" },
