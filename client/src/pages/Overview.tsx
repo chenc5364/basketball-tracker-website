@@ -97,7 +97,7 @@ export default function Overview() {
               {[
                 { label: "League", value: "Carmel Valley Spring 2026" },
                 { label: "Division", value: "Grades 3rd–4th Boys" },
-                { label: "Team", value: "James McNally" },
+                { label: "Team", value: "Connor, Nathan and Eliot" },
                 { label: "Total Teams", value: "8 teams" },
                 { label: "Regular Season Games", value: "28 games" },
                 { label: "Contact", value: "Ryan@MasterSports.com" },
