@@ -294,7 +294,24 @@ export const OVERVIEW_INFO = {
 };
 
 export const GAME_VIDEOS: VideoEntry[] = [
-  // Videos to be added by user
+  {
+    id: 1,
+    title: "Game 1: Catherine Hancock vs Connor / Eliot / Nathan - 1st Half",
+    youtubeId: "t-HfzBTZbBg",
+    youtubeUrl: "https://youtu.be/t-HfzBTZbBg?si=mYHYc4X3oMourbql",
+    date: "Sat, Mar 21",
+    opponent: "Catherine Hancock",
+    description: "1st Half",
+  },
+  {
+    id: 2,
+    title: "Game 1: Catherine Hancock vs Connor / Eliot / Nathan - 2nd Half",
+    youtubeId: "DvTxnrxoa8c",
+    youtubeUrl: "https://youtu.be/DvTxnrxoa8c?si=mKoUK5b1AdZvmVaQ",
+    date: "Sat, Mar 21",
+    opponent: "Catherine Hancock",
+    description: "2nd Half",
+  },
 ];
 
 export const OUR_TEAM = "Connor / Eliot / Nathan";
