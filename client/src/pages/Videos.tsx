@@ -1,5 +1,5 @@
 /*
-  Videos page - Game videos
+  Videos page - Game videos grouped by date
 */
 import { AlertCircle, Youtube } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
@@ -26,26 +26,15 @@ function VideoCard({ video }: { video: VideoEntry }) {
             className="text-white font-bold text-sm leading-tight"
             style={{ fontFamily: "'Barlow Condensed', sans-serif", textTransform: "uppercase", letterSpacing: "0.03em", fontSize: "1rem" }}
           >
-            {video.title}
+            {video.description}
           </h3>
         </div>
-        <div className="flex items-center gap-3 mt-2">
-          <span className="text-[oklch(0.55_0.01_265)] text-xs" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-            {video.date}
-          </span>
-          {video.opponent && (
-            <>
-              <span className="text-[oklch(0.35_0.008_265)]">·</span>
-              <span className="text-[oklch(0.55_0.01_265)] text-xs" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                vs {video.opponent}
-              </span>
-            </>
-          )}
-        </div>
-        {video.description && (
-          <p className="text-[oklch(0.55_0.01_265)] text-xs mt-2 leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-            {video.description}
-          </p>
+        {video.opponent && (
+          <div className="flex items-center gap-3 mt-2">
+            <span className="text-[oklch(0.55_0.01_265)] text-xs" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+              vs {video.opponent}
+            </span>
+          </div>
         )}
       </div>
     </div>
@@ -54,6 +43,15 @@ function VideoCard({ video }: { video: VideoEntry }) {
 
 export default function VideosPage() {
   const hasVideos = GAME_VIDEOS.length > 0;
+
+  // Group videos by date
+  const videosByDate = GAME_VIDEOS.reduce((acc, video) => {
+    if (!acc[video.date]) {
+      acc[video.date] = [];
+    }
+    acc[video.date].push(video);
+    return acc;
+  }, {} as Record<string, VideoEntry[]>);
 
   return (
     <PageLayout title="Game Videos" subtitle="Game Footage">
@@ -109,10 +107,28 @@ export default function VideosPage() {
           </div>
         </div>
       ) : (
-        /* Real videos grid */
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {GAME_VIDEOS.map((video) => (
-            <VideoCard key={video.id} video={video} />
+        /* Real videos grouped by date */
+        <div className="space-y-8">
+          {Object.entries(videosByDate).map(([date, videos]) => (
+            <div key={date}>
+              {/* Game date header */}
+              <div className="mb-4">
+                <h2
+                  className="text-[oklch(0.68_0.19_42)] font-bold"
+                  style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.5rem", textTransform: "uppercase", letterSpacing: "0.08em" }}
+                >
+                  {date} Game Vid
+                </h2>
+                <div className="h-1 w-16 bg-[oklch(0.68_0.19_42)] mt-2"></div>
+              </div>
+
+              {/* Videos for this date */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {videos.map((video) => (
+                  <VideoCard key={video.id} video={video} />
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       )}
