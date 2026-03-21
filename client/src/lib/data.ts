@@ -70,7 +70,9 @@ export const GAMES: Game[] = [
     court: "Court 1 (North)",
     home: "Catherine Hancock",
     away: "Connor / Eliot / Nathan",
-    result: "upcoming",
+    homeScore: 20,
+    awayScore: 26,
+    result: "W",
   },
   {
     id: 2,
