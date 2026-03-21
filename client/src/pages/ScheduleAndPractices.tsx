@@ -113,8 +113,8 @@ function GameCard({ game }: { game: Game }) {
           </div>
           {game.awayScore !== undefined && (
             <div
-              className="text-2xl font-bold text-white"
-              style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+              className="text-2xl font-bold"
+              style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#00f900" }}
             >
               {game.awayScore}
             </div>
