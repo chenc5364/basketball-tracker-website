@@ -76,8 +76,11 @@ function GameCard({ game }: { game: Game }) {
           </div>
           {game.homeScore !== undefined && (
             <div
-              className="text-2xl font-bold text-white"
-              style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+              className="text-2xl font-bold"
+              style={{
+                fontFamily: "'Barlow Condensed', sans-serif",
+                color: game.result === "W" ? "#00f900" : game.result === "L" ? "#ff3333" : "#ffffff"
+              }}
             >
               {game.homeScore}
             </div>
@@ -114,7 +117,10 @@ function GameCard({ game }: { game: Game }) {
           {game.awayScore !== undefined && (
             <div
               className="text-2xl font-bold"
-              style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#00f900" }}
+              style={{
+                fontFamily: "'Barlow Condensed', sans-serif",
+                color: game.result === "W" ? "#00f900" : game.result === "L" ? "#ff3333" : "#ffffff"
+              }}
             >
               {game.awayScore}
             </div>
