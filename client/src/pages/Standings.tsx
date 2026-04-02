@@ -88,15 +88,20 @@ export default function StandingsPage() {
                     
                     // Determine color for PD
                     let pdColor = "text-[oklch(0.65_0.01_265)]";
+                    let pdStyle = {};
                     if (isPDColumn) {
-                      pdColor = isPositive ? "text-[oklch(0.45_0.15_130)]" : isNegative ? "text-[oklch(0.40_0.15_15)]" : "text-[oklch(0.65_0.01_265)]";
+                      if (isPositive) {
+                        pdStyle = { color: "#00f900" };
+                      } else if (isNegative) {
+                        pdStyle = { color: "#ff2600" };
+                      }
                     }
                     
                     return (
                       <td key={i} className="px-4 py-3 text-center">
                         <span
                           className={`font-bold ${isPDColumn ? pdColor : row.isOurTeam ? "text-[oklch(0.80_0.005_265)]" : "text-[oklch(0.65_0.01_265)]"}`}
-                          style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "0.95rem" }}
+                          style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "0.95rem", ...pdStyle }}
                         >
                           {displayVal}
                         </span>
