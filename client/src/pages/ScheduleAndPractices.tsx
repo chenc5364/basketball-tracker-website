@@ -8,7 +8,7 @@ import { GAMES, PRACTICE_SCHEDULE, type Game } from "@/lib/data";
 
 const OUR_TEAM = "Connor / Eliot / Nathan";
 
-function isPracticePast(dateStr: string): boolean {
+function isDatePast(dateStr: string): boolean {
   // Parse date string like "3/20" to compare with today
   const today = new Date();
   const currentMonth = today.getMonth() + 1;
@@ -36,25 +36,31 @@ function getResultBadge(game: Game) {
 
 function GameCard({ game }: { game: Game }) {
   const isHome = game.home === OUR_TEAM;
+  const isPast = isDatePast(game.date);
+  
+  // Dim colors for past events
+  const headerBg = isPast ? "oklch(0.18 0.008 265)" : "oklch(0.22 0.015 42)";
+  const accentColor = isPast ? "oklch(0.40 0.01 265)" : "oklch(0.68 0.19 42)";
+  const borderColor = isPast ? "oklch(0.25 0.008 265)" : "oklch(0.68 0.19 42)";
 
   return (
     <div
-      className="game-card rounded-sm overflow-hidden border-l-4 border-l-[oklch(0.68_0.19_42)]"
-      style={{ borderLeftColor: "oklch(0.68 0.19 42)" }}
+      className="game-card rounded-sm overflow-hidden border-l-4"
+      style={{ borderLeftColor: borderColor, opacity: isPast ? 0.7 : 1 }}
     >
       {/* Prominent date/time header */}
-      <div className="bg-[oklch(0.22_0.015_42)] px-4 py-3 border-b border-[oklch(0.28_0.008_265)]">
+      <div className="px-4 py-3 border-b border-[oklch(0.28_0.008_265)]" style={{ backgroundColor: headerBg }}>
         <div className="flex items-center justify-between gap-3">
           <div className="flex-1">
-            <div className="text-[oklch(0.68_0.19_42)] font-bold" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.3rem", letterSpacing: "0.05em", textTransform: "uppercase" }}>
+            <div className="font-bold" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.3rem", letterSpacing: "0.05em", textTransform: "uppercase", color: accentColor }}>
               {game.date}
             </div>
             <div className="flex items-center gap-2 mt-1">
-              <Clock className="w-4 h-4 text-[oklch(0.68_0.19_42)]" />
-              <span className="text-[oklch(0.68_0.19_42)] font-bold" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1rem", letterSpacing: "0.05em" }}>
+              <Clock className="w-4 h-4" style={{ color: accentColor }} />
+              <span className="font-bold" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1rem", letterSpacing: "0.05em", color: accentColor }}>
                 {game.time}
               </span>
-              <span className="text-[oklch(0.45_0.01_265)] text-xs ml-auto" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em" }}>
+              <span className="text-xs ml-auto" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em", color: isPast ? "oklch(0.40 0.01 265)" : "oklch(0.45 0.01 265)" }}>
                 {game.pool}
               </span>
             </div>
@@ -71,20 +77,20 @@ function GameCard({ game }: { game: Game }) {
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-1">
             <span
-              className="text-[oklch(0.45_0.01_265)] text-xs uppercase tracking-wider"
-              style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600 }}
+              className="text-xs uppercase tracking-wider"
+              style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600, color: isPast ? "oklch(0.40 0.01 265)" : "oklch(0.45 0.01 265)" }}
             >
               Home
             </span>
             {isHome && (
-              <span className="text-[oklch(0.68_0.19_42)] text-xs font-bold uppercase" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+              <span className="text-xs font-bold uppercase" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: accentColor }}>
                 ← US
               </span>
             )}
           </div>
           <div
-            className={`font-bold truncate ${isHome ? "text-[oklch(0.68_0.19_42)]" : "text-white"}`}
-            style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1rem", letterSpacing: "0.02em", textTransform: "uppercase" }}
+            className={`font-bold truncate`}
+            style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1rem", letterSpacing: "0.02em", textTransform: "uppercase", color: isHome ? accentColor : "white" }}
           >
             {game.home}
           </div>
@@ -102,8 +108,8 @@ function GameCard({ game }: { game: Game }) {
         </div>
 
         <div
-          className="text-[oklch(0.45_0.01_265)] font-bold text-lg"
-          style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+          className="font-bold text-lg"
+          style={{ fontFamily: "'Barlow Condensed', sans-serif", color: isPast ? "oklch(0.40 0.01 265)" : "oklch(0.45 0.01 265)" }}
         >
           VS
         </div>
@@ -111,20 +117,20 @@ function GameCard({ game }: { game: Game }) {
         <div className="flex-1 min-w-0 text-right">
           <div className="flex items-center gap-2 justify-end mb-1">
             {game.away === OUR_TEAM && (
-              <span className="text-[oklch(0.68_0.19_42)] text-xs font-bold uppercase" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+              <span className="text-xs font-bold uppercase" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: accentColor }}>
                 US →
               </span>
             )}
             <span
-              className="text-[oklch(0.45_0.01_265)] text-xs uppercase tracking-wider"
-              style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600 }}
+              className="text-xs uppercase tracking-wider"
+              style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600, color: isPast ? "oklch(0.40 0.01 265)" : "oklch(0.45 0.01 265)" }}
             >
               Away
             </span>
           </div>
           <div
-            className={`font-bold truncate ${game.away === OUR_TEAM ? "text-[oklch(0.68_0.19_42)]" : "text-white"}`}
-            style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1rem", letterSpacing: "0.02em", textTransform: "uppercase" }}
+            className={`font-bold truncate`}
+            style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1rem", letterSpacing: "0.02em", textTransform: "uppercase", color: game.away === OUR_TEAM ? accentColor : "white" }}
           >
             {game.away}
           </div>
@@ -143,11 +149,11 @@ function GameCard({ game }: { game: Game }) {
       </div>
 
       {/* Location */}
-      <div className="flex items-start gap-2 text-[oklch(0.55_0.01_265)] text-sm mt-3 pt-3 border-t border-[oklch(0.22_0.008_265)]">
+      <div className="flex items-start gap-2 text-sm mt-3 pt-3 border-t border-[oklch(0.22_0.008_265)]" style={{ color: isPast ? "oklch(0.40 0.01 265)" : "oklch(0.55 0.01 265)" }}>
         <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5" />
         <div style={{ fontFamily: "'DM Sans', sans-serif" }}>
           <div>{game.location}</div>
-          <div className="text-xs text-[oklch(0.45_0.01_265)]">{game.court}</div>
+          <div className="text-xs" style={{ color: isPast ? "oklch(0.35 0.01 265)" : "oklch(0.45 0.01 265)" }}>{game.court}</div>
         </div>
       </div>
       </div>
@@ -156,34 +162,39 @@ function GameCard({ game }: { game: Game }) {
 }
 
 function PracticeCard({ session }: { session: (typeof PRACTICE_SCHEDULE)[0] }) {
-  const isPast = isPracticePast(session.date);
+  const isPast = isDatePast(session.date);
+  
+  // Dim colors for past events
+  const headerBg = isPast ? "oklch(0.18 0.008 265)" : "oklch(0.22 0.015 42)";
+  const accentColor = isPast ? "oklch(0.40 0.01 265)" : "oklch(0.68 0.19 42)";
+  const borderColor = isPast ? "oklch(0.25 0.008 265)" : "oklch(0.68 0.19 42)";
   
   return (
     <div
-      className="practice-card rounded-sm overflow-hidden border-l-4 border-l-[oklch(0.68_0.19_42)]"
-      style={{ borderLeftColor: "oklch(0.68 0.19 42)" }}
+      className="practice-card rounded-sm overflow-hidden border-l-4"
+      style={{ borderLeftColor: borderColor, opacity: isPast ? 0.7 : 1 }}
     >
       {/* Prominent date/time header */}
-      <div className="bg-[oklch(0.22_0.015_42)] px-4 py-3 border-b border-[oklch(0.28_0.008_265)]">
+      <div className="px-4 py-3 border-b border-[oklch(0.28_0.008_265)]" style={{ backgroundColor: headerBg }}>
         <div className="flex items-center justify-between gap-3">
           <div className="flex-1">
-            <div className="text-[oklch(0.68_0.19_42)] font-bold" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.3rem", letterSpacing: "0.05em", textTransform: "uppercase" }}>
+            <div className="font-bold" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.3rem", letterSpacing: "0.05em", textTransform: "uppercase", color: accentColor }}>
               {session.day}, {session.date}
             </div>
             <div className="flex items-center gap-2 mt-1">
-              <Clock className="w-4 h-4 text-[oklch(0.68_0.19_42)]" />
-              <span className="text-[oklch(0.68_0.19_42)] font-bold" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1rem", letterSpacing: "0.05em" }}>
+              <Clock className="w-4 h-4" style={{ color: accentColor }} />
+              <span className="font-bold" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1rem", letterSpacing: "0.05em", color: accentColor }}>
                 {session.time}
               </span>
             </div>
           </div>
           <div className="text-right">
-            {isPast && (
+            {isPast ? (
               <span className="badge-past" style={{
                 display: "inline-block",
                 padding: "0.35rem 0.75rem",
                 backgroundColor: "oklch(0.25 0.008 265)",
-                color: "oklch(0.55 0.01 265)",
+                color: "oklch(0.40 0.01 265)",
                 borderRadius: "0.25rem",
                 fontSize: "0.75rem",
                 fontWeight: 700,
@@ -192,6 +203,22 @@ function PracticeCard({ session }: { session: (typeof PRACTICE_SCHEDULE)[0] }) {
                 fontFamily: "'Barlow Condensed', sans-serif"
               }}>
                 Past
+              </span>
+            ) : (
+              <span className="badge-upcoming" style={{
+                display: "inline-block",
+                padding: "0.35rem 0.75rem",
+                backgroundColor: "oklch(0.22 0.015 42)",
+                color: "oklch(0.68 0.19 42)",
+                borderRadius: "0.25rem",
+                fontSize: "0.75rem",
+                fontWeight: 700,
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+                fontFamily: "'Barlow Condensed', sans-serif",
+                border: "1px solid oklch(0.68 0.19 42)"
+              }}>
+                Upcoming
               </span>
             )}
           </div>
@@ -202,16 +229,16 @@ function PracticeCard({ session }: { session: (typeof PRACTICE_SCHEDULE)[0] }) {
       <div className="p-4">
         {/* Location */}
         <div className="flex items-start gap-2 mb-3">
-          <MapPin className="w-4 h-4 text-[oklch(0.68_0.19_42)] flex-shrink-0 mt-0.5" />
+          <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: accentColor }} />
           <div className="text-sm" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-            <div className="text-white font-semibold">{session.location}</div>
-            <div className="text-[oklch(0.55_0.01_265)] text-xs mt-1">{session.address}</div>
+            <div className="font-semibold" style={{ color: isPast ? "oklch(0.40 0.01 265)" : "white" }}>{session.location}</div>
+            <div className="text-xs mt-1" style={{ color: isPast ? "oklch(0.35 0.01 265)" : "oklch(0.55 0.01 265)" }}>{session.address}</div>
           </div>
         </div>
 
         {/* Notes/Court */}
         {session.notes && (
-          <div className="text-[oklch(0.55_0.01_265)] text-sm" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em" }}>
+          <div className="text-sm" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em", color: isPast ? "oklch(0.40 0.01 265)" : "oklch(0.55 0.01 265)" }}>
             {session.notes}
           </div>
         )}
@@ -285,11 +312,11 @@ export default function ScheduleAndPractices() {
           {playoffGames.length > 0 && (
             <div>
               <div
-                className="text-[oklch(0.68_0.19_42)] text-xs font-bold uppercase tracking-widest mb-4 flex items-center gap-3"
+                className="text-[oklch(0.55_0.01_265)] text-xs font-bold uppercase tracking-widest mb-4 flex items-center gap-3"
                 style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
               >
                 Playoffs
-                <div className="flex-1 h-px bg-[oklch(0.28_0.008_265)]" />
+                <div className="flex-1 h-px bg-[oklch(0.22_0.008_265)]" />
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {playoffGames.map((game) => (
@@ -298,45 +325,30 @@ export default function ScheduleAndPractices() {
               </div>
             </div>
           )}
-
-          {/* MasterSports link */}
-          <div className="mt-8 text-center">
-            <a
-              href="https://www.mastersports.com/leagues/carmel-valley-summer-2026-spring-basketball-league/divisions/1089/teams/3907/schedule"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-[oklch(0.68_0.19_42)] text-sm font-bold uppercase tracking-wider hover:underline"
-              style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.1em" }}
-            >
-              View Full League Schedule on MasterSports →
-            </a>
-          </div>
         </div>
       ) : (
-        /* Practices Tab */
-        <div>
-          {!hasPractices ? (
-            <div className="bg-[oklch(0.17_0.008_265)] border border-[oklch(0.28_0.008_265)] border-l-4 rounded-sm p-6" style={{ borderLeftColor: "oklch(0.68 0.19 42)" }}>
-              <div className="flex items-start gap-3">
-                <AlertCircle className="w-5 h-5 text-[oklch(0.68_0.19_42)] flex-shrink-0 mt-0.5" />
-                <div>
-                  <div
-                    className="text-white font-bold mb-2"
-                    style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.1rem", textTransform: "uppercase", letterSpacing: "0.05em" }}
-                  >
-                    Practice Schedule Coming Soon
-                  </div>
-                  <p className="text-[oklch(0.65_0.01_265)] text-sm leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                    Practice days, times, and locations will be updated once confirmed by the coach.
-                  </p>
-                </div>
+        <div className="space-y-8">
+          {/* Practices */}
+          {hasPractices ? (
+            <div>
+              <div
+                className="text-[oklch(0.55_0.01_265)] text-xs font-bold uppercase tracking-widest mb-4 flex items-center gap-3"
+                style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+              >
+                Regular Season
+                <div className="flex-1 h-px bg-[oklch(0.22_0.008_265)]" />
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {PRACTICE_SCHEDULE.map((session) => (
+                  <PracticeCard key={session.id} session={session} />
+                ))}
               </div>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {PRACTICE_SCHEDULE.map((session) => (
-                <PracticeCard key={session.id} session={session} />
-              ))}
+            <div className="bg-[oklch(0.17_0.008_265)] border border-[oklch(0.28_0.008_265)] rounded-sm p-4">
+              <p className="text-[oklch(0.55_0.01_265)] text-sm" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                <strong className="text-[oklch(0.68_0.19_42)]">Note:</strong> Practice schedule coming soon.
+              </p>
             </div>
           )}
         </div>
