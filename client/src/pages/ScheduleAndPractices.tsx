@@ -146,7 +146,7 @@ function GameCard({ game }: { game: Game }) {
           </div>
           <div
             className={`font-bold truncate`}
-            style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1rem", letterSpacing: "0.02em", textTransform: "uppercase", color: game.away === OUR_TEAM ? accentColor : "white" }}
+            style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1rem", letterSpacing: "0.02em", textTransform: "uppercase", color: game.away === OUR_TEAM ? "#00f900" : "white" }}
           >
             {game.away}
           </div>
