@@ -273,7 +273,7 @@ export const ROSTER = [
   { name: "Sondre Momper", number: 0, grade: "3rd", position: "" },
   { name: "Aiden Chan", number: 0, grade: "3rd", position: "" },
   { name: "Liam Ashrafzadeh", number: 0, grade: "3rd", position: "" },
-  { name: "Carter Congdon", number: 0, grade: "3rd", position: "" },
+  { name: "Andrew Zhou", number: 0, grade: "3rd", position: "" },
   { name: "Eddie Viehmann", number: 0, grade: "3rd", position: "" },
   { name: "Sritan Sirimalle", number: 0, grade: "3rd", position: "" },
 ];
