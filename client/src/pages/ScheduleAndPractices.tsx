@@ -8,6 +8,20 @@ import { GAMES, PRACTICE_SCHEDULE, type Game } from "@/lib/data";
 
 const OUR_TEAM = "Connor / Eliot / Nathan";
 
+function isPracticePast(dateStr: string): boolean {
+  // Parse date string like "3/20" to compare with today
+  const today = new Date();
+  const currentMonth = today.getMonth() + 1;
+  const currentDay = today.getDate();
+  
+  const [month, day] = dateStr.split("/").map(Number);
+  
+  // Assume 2026 for all dates
+  if (month < currentMonth) return true;
+  if (month === currentMonth && day < currentDay) return true;
+  return false;
+}
+
 function getResultBadge(game: Game) {
   if (game.isPlayoff) {
     return <span className="badge-playoff">Playoffs</span>;
@@ -142,6 +156,8 @@ function GameCard({ game }: { game: Game }) {
 }
 
 function PracticeCard({ session }: { session: (typeof PRACTICE_SCHEDULE)[0] }) {
+  const isPast = isPracticePast(session.date);
+  
   return (
     <div
       className="practice-card rounded-sm overflow-hidden border-l-4 border-l-[oklch(0.68_0.19_42)]"
@@ -160,6 +176,24 @@ function PracticeCard({ session }: { session: (typeof PRACTICE_SCHEDULE)[0] }) {
                 {session.time}
               </span>
             </div>
+          </div>
+          <div className="text-right">
+            {isPast && (
+              <span className="badge-past" style={{
+                display: "inline-block",
+                padding: "0.35rem 0.75rem",
+                backgroundColor: "oklch(0.25 0.008 265)",
+                color: "oklch(0.55 0.01 265)",
+                borderRadius: "0.25rem",
+                fontSize: "0.75rem",
+                fontWeight: 700,
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+                fontFamily: "'Barlow Condensed', sans-serif"
+              }}>
+                Past
+              </span>
+            )}
           </div>
         </div>
       </div>
