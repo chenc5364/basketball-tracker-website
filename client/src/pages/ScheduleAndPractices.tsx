@@ -79,7 +79,7 @@ function GameCard({ game }: { game: Game }) {
               className="text-2xl font-bold"
               style={{
                 fontFamily: "'Barlow Condensed', sans-serif",
-                color: game.result === "W" ? "#00f900" : game.result === "L" ? "#ff3333" : "#ffffff"
+                color: isHome ? (game.result === "W" ? "#00f900" : game.result === "L" ? "#ff3333" : "#ffffff") : "#ffffff"
               }}
             >
               {game.homeScore}
@@ -119,7 +119,7 @@ function GameCard({ game }: { game: Game }) {
               className="text-2xl font-bold"
               style={{
                 fontFamily: "'Barlow Condensed', sans-serif",
-                color: game.result === "W" ? "#00f900" : game.result === "L" ? "#ff3333" : "#ffffff"
+                color: game.away === OUR_TEAM ? (game.result === "W" ? "#00f900" : game.result === "L" ? "#ff3333" : "#ffffff") : "#ffffff"
               }}
             >
               {game.awayScore}
