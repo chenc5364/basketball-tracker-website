@@ -77,16 +77,32 @@ export default function StandingsPage() {
                   </td>
 
                   {/* Stats */}
-                  {[row.w, row.l, row.t, row.pd, row.ps, row.pa].map((val, i) => (
-                    <td key={i} className="px-4 py-3 text-center">
-                      <span
-                        className={`font-bold ${row.isOurTeam ? "text-[oklch(0.80_0.005_265)]" : "text-[oklch(0.65_0.01_265)]"}`}
-                        style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "0.95rem" }}
-                      >
-                        {val}
-                      </span>
-                    </td>
-                  ))}
+                  {[row.w, row.l, row.t, row.pd, row.ps, row.pa].map((val, i) => {
+                    // Determine if this is the PD column (index 3)
+                    const isPDColumn = i === 3;
+                    const isPositive = isPDColumn && val > 0;
+                    const isNegative = isPDColumn && val < 0;
+                    
+                    // Format PD with + or - prefix
+                    const displayVal = isPDColumn ? (val > 0 ? `+${val}` : `${val}`) : val;
+                    
+                    // Determine color for PD
+                    let pdColor = "text-[oklch(0.65_0.01_265)]";
+                    if (isPDColumn) {
+                      pdColor = isPositive ? "text-[oklch(0.45_0.15_130)]" : isNegative ? "text-[oklch(0.40_0.15_15)]" : "text-[oklch(0.65_0.01_265)]";
+                    }
+                    
+                    return (
+                      <td key={i} className="px-4 py-3 text-center">
+                        <span
+                          className={`font-bold ${isPDColumn ? pdColor : row.isOurTeam ? "text-[oklch(0.80_0.005_265)]" : "text-[oklch(0.65_0.01_265)]"}`}
+                          style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "0.95rem" }}
+                        >
+                          {displayVal}
+                        </span>
+                      </td>
+                    );
+                  })}
                 </tr>
               ))}
             </tbody>
