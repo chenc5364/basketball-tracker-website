@@ -9,14 +9,30 @@ import { GAMES, PRACTICE_SCHEDULE, type Game } from "@/lib/data";
 const OUR_TEAM = "Connor / Eliot / Nathan";
 
 function isDatePast(dateStr: string): boolean {
-  // Parse date string like "3/20" to compare with today
   const today = new Date();
   const currentMonth = today.getMonth() + 1;
   const currentDay = today.getDate();
   
-  const [month, day] = dateStr.split("/").map(Number);
+  let month: number, day: number;
   
-  // Assume 2026 for all dates
+  // Handle "Sat, Mar 21" format (games)
+  if (dateStr.includes(",")) {
+    const monthMap: Record<string, number> = {
+      "Jan": 1, "Feb": 2, "Mar": 3, "Apr": 4, "May": 5, "Jun": 6,
+      "Jul": 7, "Aug": 8, "Sep": 9, "Oct": 10, "Nov": 11, "Dec": 12
+    };
+    const parts = dateStr.split(" ");
+    const monthStr = parts[1];
+    const dayStr = parts[2];
+    month = monthMap[monthStr] || 0;
+    day = parseInt(dayStr, 10);
+  } else {
+    // Handle "3/20" format (practices)
+    const parts = dateStr.split("/");
+    month = parseInt(parts[0], 10);
+    day = parseInt(parts[1], 10);
+  }
+  
   if (month < currentMonth) return true;
   if (month === currentMonth && day < currentDay) return true;
   return false;
