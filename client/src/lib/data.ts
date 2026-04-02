@@ -203,8 +203,8 @@ export const PRACTICE_SCHEDULE = [
   },
   {
     id: 2,
-    day: "Friday",
-    date: "4/3",
+    day: "Thursday",
+    date: "3/27",
     time: "5:00 - 6:00 PM",
     location: "Carmel Valley Recreation Center",
     address: "3777 Townsgate Drive, San Diego, CA 92130",
@@ -213,7 +213,7 @@ export const PRACTICE_SCHEDULE = [
   {
     id: 3,
     day: "Friday",
-    date: "4/10",
+    date: "4/3",
     time: "5:00 - 6:00 PM",
     location: "Carmel Valley Recreation Center",
     address: "3777 Townsgate Drive, San Diego, CA 92130",
@@ -222,7 +222,7 @@ export const PRACTICE_SCHEDULE = [
   {
     id: 4,
     day: "Friday",
-    date: "4/17",
+    date: "4/10",
     time: "5:00 - 6:00 PM",
     location: "Carmel Valley Recreation Center",
     address: "3777 Townsgate Drive, San Diego, CA 92130",
@@ -231,7 +231,7 @@ export const PRACTICE_SCHEDULE = [
   {
     id: 5,
     day: "Friday",
-    date: "4/24",
+    date: "4/17",
     time: "5:00 - 6:00 PM",
     location: "Carmel Valley Recreation Center",
     address: "3777 Townsgate Drive, San Diego, CA 92130",
@@ -240,7 +240,7 @@ export const PRACTICE_SCHEDULE = [
   {
     id: 6,
     day: "Friday",
-    date: "5/1",
+    date: "4/24",
     time: "5:00 - 6:00 PM",
     location: "Carmel Valley Recreation Center",
     address: "3777 Townsgate Drive, San Diego, CA 92130",
@@ -248,6 +248,15 @@ export const PRACTICE_SCHEDULE = [
   },
   {
     id: 7,
+    day: "Friday",
+    date: "5/1",
+    time: "5:00 - 6:00 PM",
+    location: "Carmel Valley Recreation Center",
+    address: "3777 Townsgate Drive, San Diego, CA 92130",
+    notes: "Court 2",
+  },
+  {
+    id: 8,
     day: "Friday",
     date: "5/8",
     time: "5:00 - 6:00 PM",
