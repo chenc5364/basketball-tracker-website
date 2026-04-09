@@ -325,6 +325,42 @@ export const GAME_VIDEOS: VideoEntry[] = [
     opponent: "Catherine Hancock",
     description: "2nd Half",
   },
+  {
+    id: 3,
+    title: "Game 2: Jon Ramba vs Connor / Eliot / Nathan - Video 1",
+    youtubeId: "_2oIIm_9QJQ",
+    youtubeUrl: "https://youtu.be/_2oIIm_9QJQ",
+    date: "Wed, Apr 8",
+    opponent: "Jon Ramba",
+    description: "Video 1",
+  },
+  {
+    id: 4,
+    title: "Game 2: Jon Ramba vs Connor / Eliot / Nathan - Video 2",
+    youtubeId: "7tXkJ7yxsa8",
+    youtubeUrl: "https://youtu.be/7tXkJ7yxsa8",
+    date: "Wed, Apr 8",
+    opponent: "Jon Ramba",
+    description: "Video 2",
+  },
+  {
+    id: 5,
+    title: "Game 2: Jon Ramba vs Connor / Eliot / Nathan - Video 3",
+    youtubeId: "usGVTVHxJko",
+    youtubeUrl: "https://youtu.be/usGVTVHxJko",
+    date: "Wed, Apr 8",
+    opponent: "Jon Ramba",
+    description: "Video 3",
+  },
+  {
+    id: 6,
+    title: "Game 2: Jon Ramba vs Connor / Eliot / Nathan - Video 4",
+    youtubeId: "DXACNsxaSGM",
+    youtubeUrl: "https://youtu.be/DXACNsxaSGM",
+    date: "Wed, Apr 8",
+    opponent: "Jon Ramba",
+    description: "Video 4",
+  },
 ];
 
 export const OUR_TEAM = "Connor / Eliot / Nathan";
