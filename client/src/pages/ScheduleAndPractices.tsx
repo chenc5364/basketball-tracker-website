@@ -33,9 +33,10 @@ function isDatePast(dateStr: string): boolean {
     day = parseInt(parts[1], 10);
   }
   
-  if (month < currentMonth) return true;
-  if (month === currentMonth && day < currentDay) return true;
-  return false;
+  const isPast = month < currentMonth || (month === currentMonth && day < currentDay);
+  console.log(`Date check: ${dateStr} -> month=${month}, day=${day}, today=${currentMonth}/${currentDay}, isPast=${isPast}`);
+  
+  return isPast;
 }
 
 function getResultBadge(game: Game) {
@@ -58,7 +59,8 @@ function getResultBadge(game: Game) {
 
 function GameCard({ game }: { game: Game }) {
   const isHome = game.home === OUR_TEAM;
-  const isPast = isDatePast(game.date);
+  // A game is past if it has scores or if the date is in the past
+  const isPast = isDatePast(game.date) || (game.homeScore !== undefined && game.awayScore !== undefined);
   
   // Dim colors for past events
   const headerBg = isPast ? "oklch(0.18 0.008 265)" : "oklch(0.22 0.015 42)";
