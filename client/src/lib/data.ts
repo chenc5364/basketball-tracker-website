@@ -84,7 +84,9 @@ export const GAMES: Game[] = [
     court: "West Court",
     home: "Jon Ramba",
     away: "Connor / Eliot / Nathan",
-    result: "upcoming",
+    homeScore: 30,
+    awayScore: 33,
+    result: "W",
   },
   {
     id: 3,
@@ -330,7 +332,7 @@ export const OUR_TEAM = "Connor / Eliot / Nathan";
 export const STANDINGS = [
   { seed: 1, team: "Kolt Sakofsky/Grant Clabo", w: 1, l: 0, t: 0, pd: 15, ps: 24, pa: 9, isOurTeam: false },
   { seed: 2, team: "James McNally", w: 1, l: 0, t: 0, pd: 7, ps: 24, pa: 17, isOurTeam: false },
-  { seed: 3, team: "Connor / Eliot / Nathan", w: 1, l: 0, t: 0, pd: 6, ps: 26, pa: 20, isOurTeam: true },
+  { seed: 3, team: "Connor / Eliot / Nathan", w: 2, l: 0, t: 0, pd: 9, ps: 59, pa: 50, isOurTeam: true },
   { seed: 4, team: "Jon Ramba", w: 1, l: 0, t: 0, pd: 1, ps: 30, pa: 29, isOurTeam: false },
   { seed: 5, team: "Marcus Lee/Derick Chi", w: 0, l: 1, t: 0, pd: -1, ps: 29, pa: 30, isOurTeam: false },
   { seed: 6, team: "Catherine Hancock", w: 0, l: 1, t: 0, pd: -6, ps: 20, pa: 26, isOurTeam: false },
