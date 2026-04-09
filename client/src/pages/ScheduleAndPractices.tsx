@@ -39,14 +39,20 @@ function isDatePast(dateStr: string): boolean {
 }
 
 function getResultBadge(game: Game) {
+  const isPast = isDatePast(game.date);
+  
   if (game.isPlayoff) {
     return <span className="badge-playoff">Playoffs</span>;
   }
   if (game.result === "upcoming") {
     return <span className="badge-upcoming">Upcoming</span>;
   }
-  if (game.result === "W") return <span className="badge-win">Win</span>;
-  if (game.result === "L") return <span className="badge-loss">Loss</span>;
+  if (game.result === "W") {
+    return <span className={isPast ? "badge-win-past" : "badge-win"}>Win</span>;
+  }
+  if (game.result === "L") {
+    return <span className={isPast ? "badge-loss-past" : "badge-loss"}>Loss</span>;
+  }
   return null;
 }
 

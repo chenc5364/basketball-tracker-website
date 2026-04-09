@@ -215,6 +215,28 @@
     padding: 2px 8px;
     border-radius: 3px;
   }
+  .badge-win-past {
+    background: oklch(0.25 0.008 265);
+    color: oklch(0.40 0.01 265);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 3px;
+  }
+  .badge-loss-past {
+    background: oklch(0.25 0.008 265);
+    color: oklch(0.40 0.01 265);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 3px;
+  }
   .badge-playoff {
     background: oklch(0.30 0.12 42);
     color: oklch(0.80 0.15 42);
