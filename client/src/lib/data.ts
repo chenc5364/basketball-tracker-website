@@ -367,13 +367,13 @@ export const OUR_TEAM = "Connor / Eliot / Nathan";
 
 export const STANDINGS = [
   { seed: 1, team: "Kolt Sakofsky/Grant Clabo", w: 2, l: 0, t: 0, pd: 20, ps: 55, pa: 35, isOurTeam: false },
-  { seed: 2, team: "Connor / Eliot / Nathan", w: 2, l: 0, t: 0, pd: 9, ps: 59, pa: 50, isOurTeam: true },
-  { seed: 3, team: "James McNally", w: 1, l: 0, t: 0, pd: 7, ps: 24, pa: 17, isOurTeam: false },
-  { seed: 4, team: "Jon Ramba", w: 1, l: 1, t: 0, pd: -2, ps: 60, pa: 62, isOurTeam: false },
-  { seed: 5, team: "Marcus Lee/Derick Chi", w: 0, l: 1, t: 0, pd: -1, ps: 29, pa: 30, isOurTeam: false },
-  { seed: 6, team: "Catherine Hancock", w: 0, l: 1, t: 0, pd: -6, ps: 20, pa: 26, isOurTeam: false },
-  { seed: 7, team: "Sam Hangafarin", w: 0, l: 2, t: 0, pd: -12, ps: 43, pa: 55, isOurTeam: false },
-  { seed: 8, team: "Luke Franey/Naveen Krishnamoorthy", w: 0, l: 1, t: 0, pd: -15, ps: 9, pa: 24, isOurTeam: false },
+  { seed: 2, team: "James McNally", w: 2, l: 0, t: 0, pd: 14, ps: 42, pa: 28, isOurTeam: false },
+  { seed: 3, team: "Connor / Eliot / Nathan", w: 2, l: 0, t: 0, pd: 9, ps: 59, pa: 50, isOurTeam: true },
+  { seed: 4, team: "Marcus Lee/Derick Chi", w: 1, l: 1, t: 0, pd: 8, ps: 51, pa: 43, isOurTeam: false },
+  { seed: 5, team: "Jon Ramba", w: 1, l: 1, t: 0, pd: -2, ps: 60, pa: 62, isOurTeam: false },
+  { seed: 6, team: "Sam Hangafarin", w: 0, l: 2, t: 0, pd: -12, ps: 43, pa: 55, isOurTeam: false },
+  { seed: 7, team: "Catherine Hancock", w: 0, l: 2, t: 0, pd: -13, ps: 31, pa: 44, isOurTeam: false },
+  { seed: 8, team: "Luke Franey/Naveen Krishnamoorthy", w: 0, l: 2, t: 0, pd: -24, ps: 22, pa: 46, isOurTeam: false },
 ];
 
 export interface VideoEntry {
