@@ -4,7 +4,7 @@
 import { useState } from "react";
 import { MapPin, Clock, Calendar, AlertCircle } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
-import { GAMES, PRACTICE_SCHEDULE, type Game } from "@/lib/data";
+import { GAMES, PRACTICES, type Game } from "@/lib/data";
 
 const OUR_TEAM = "Connor / Eliot / Nathan";
 
@@ -83,9 +83,6 @@ function GameCard({ game }: { game: Game }) {
               <Clock className="w-4 h-4" style={{ color: accentColor }} />
               <span className="font-bold" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1rem", letterSpacing: "0.05em", color: accentColor }}>
                 {game.time}
-              </span>
-              <span className="text-xs ml-auto" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em", color: isPast ? "oklch(0.40 0.01 265)" : "oklch(0.45 0.01 265)" }}>
-                {game.pool}
               </span>
             </div>
           </div>
@@ -185,7 +182,7 @@ function GameCard({ game }: { game: Game }) {
   );
 }
 
-function PracticeCard({ session }: { session: (typeof PRACTICE_SCHEDULE)[0] }) {
+function PracticeCard({ session }: { session: (typeof PRACTICES)[0] }) {
   const isPast = isDatePast(session.date);
   
   // Dim colors for past events
@@ -203,7 +200,7 @@ function PracticeCard({ session }: { session: (typeof PRACTICE_SCHEDULE)[0] }) {
         <div className="flex items-center justify-between gap-3">
           <div className="flex-1">
             <div className="font-bold" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.3rem", letterSpacing: "0.05em", textTransform: "uppercase", color: accentColor }}>
-              {session.day}, {session.date}
+              {session.date}
             </div>
             <div className="flex items-center gap-2 mt-1">
               <Clock className="w-4 h-4" style={{ color: accentColor }} />
@@ -252,20 +249,12 @@ function PracticeCard({ session }: { session: (typeof PRACTICE_SCHEDULE)[0] }) {
       {/* Practice content */}
       <div className="p-4">
         {/* Location */}
-        <div className="flex items-start gap-2 mb-3">
+          <div className="flex items-start gap-2 mb-3">
           <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: accentColor }} />
           <div className="text-sm" style={{ fontFamily: "'DM Sans', sans-serif" }}>
             <div className="font-semibold" style={{ color: isPast ? "oklch(0.40 0.01 265)" : "white" }}>{session.location}</div>
-            <div className="text-xs mt-1" style={{ color: isPast ? "oklch(0.35 0.01 265)" : "oklch(0.55 0.01 265)" }}>{session.address}</div>
           </div>
         </div>
-
-        {/* Notes/Court */}
-        {session.notes && (
-          <div className="text-sm" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em", color: isPast ? "oklch(0.40 0.01 265)" : "oklch(0.55 0.01 265)" }}>
-            {session.notes}
-          </div>
-        )}
       </div>
     </div>
   );
@@ -281,7 +270,7 @@ export default function ScheduleAndPractices() {
   const regularGames = ourGames.filter((g) => !g.isPlayoff);
   const playoffGames = ourGames.filter((g) => g.isPlayoff);
 
-  const hasPractices = PRACTICE_SCHEDULE.length > 0 && PRACTICE_SCHEDULE[0].day !== "TBD";
+  const hasPractices = PRACTICES.length > 0;
 
   return (
     <PageLayout title="Schedule & Practices" subtitle="Connor / Eliot / Nathan">
@@ -363,7 +352,7 @@ export default function ScheduleAndPractices() {
                 <div className="flex-1 h-px bg-[oklch(0.22_0.008_265)]" />
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {PRACTICE_SCHEDULE.map((session) => (
+                {PRACTICES.map((session) => (
                   <PracticeCard key={session.id} session={session} />
                 ))}
               </div>

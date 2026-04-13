@@ -1,65 +1,46 @@
-// Carmel Valley Spring 2026 Basketball League — Grades 3rd-4th Boys
-// Team: Connor / Eliot / Nathan (Team #7 in standings)
 
-export const TEAM_INFO = {
-  teamName: "Connor / Eliot / Nathan",
-  league: "Carmel Valley Spring 2026 Basketball League",
-  division: "Grades 3rd-4th Boys",
-  season: "Spring 2026",
-  dates: "March 21 – May 30, 2026",
-  grades: "Grades 3–4",
-  gender: "Boys",
-  coachNames: "Connor / Eliot / Nathan",
-  locations: [
-    {
-      name: "Carmel Valley Recreation Center",
-      address: "3777 Townsgate Drive, San Diego, CA 92130",
-      shortName: "CVRC",
-    },
-    {
-      name: "Ocean Air Park",
-      address: "4770 Fairport Way, San Diego, CA 92130",
-      shortName: "OAP",
-    },
-  ],
-  sourceUrl:
-    "https://www.mastersports.com/leagues/carmel-valley-summer-2026-spring-basketball-league/divisions/1089/teams/3907",
-};
-
-export const TEAMS = [
-  "Catherine Hancock",
-  "Luke Franey/Naveen Krishnamoorthy",
-  "Marcus Lee/Derick Chi",
-  "Kolt Sakofsky/Grant Clabo",
-  "James McNally",
-  "Jon Ramba",
-  "Connor / Eliot / Nathan",
-  "Sam Hangafarin",
-];
-
-export type GameResult = "W" | "L" | "upcoming" | "playoff";
 
 export interface Game {
   id: number;
   pool: string;
   date: string;
-  dateObj: string; // ISO date string for sorting
+  dateObj: string;
   time: string;
   location: string;
   court: string;
-  home: string;
-  away: string;
+  home?: string;
+  away?: string;
   homeScore?: number;
   awayScore?: number;
-  result?: GameResult;
+  result?: "W" | "L" | "upcoming";
   isPlayoff?: boolean;
   round?: string;
 }
 
+export interface Practice {
+  id: number;
+  date: string;
+  dateObj: string;
+  time: string;
+  location: string;
+}
+
+export interface Standing {
+  seed: number;
+  team: string;
+  w: number;
+  l: number;
+  t: number;
+  pd: number;
+  ps: number;
+  pa: number;
+  isOurTeam: boolean;
+}
+
 // Our team is "Connor / Eliot / Nathan"
-// 7 regular season games from MasterSports schedule
+// Complete game schedule from MasterSports (28 regular season games)
 export const GAMES: Game[] = [
-  // Regular Season - 7 games total
+  // Past Games (Completed)
   {
     id: 1,
     pool: "Pool 1",
@@ -76,6 +57,56 @@ export const GAMES: Game[] = [
   },
   {
     id: 2,
+    pool: "Pool 2",
+    date: "Sat, Mar 21",
+    dateObj: "2026-03-21",
+    time: "11:30 AM",
+    location: "Carmel Valley Recreation Center",
+    court: "Court 1 (North)",
+    home: "James McNally",
+    away: "Sam Hangafarin",
+    homeScore: 24,
+    awayScore: 17,
+    result: "upcoming",
+  },
+  {
+    id: 3,
+    pool: "Pool 3",
+    date: "Wed, Mar 25",
+    dateObj: "2026-03-25",
+    time: "5:15 PM",
+    location: "Ocean Air Park",
+    court: "West Court",
+    home: "Jon Ramba",
+    away: "Marcus Lee/Derick Chi",
+    homeScore: 30,
+    awayScore: 29,
+    result: "upcoming",
+  },
+  {
+    id: 4,
+    pool: "Pool 4",
+    date: "Wed, Mar 25",
+    dateObj: "2026-03-25",
+    time: "6:15 PM",
+    location: "Ocean Air Park",
+    court: "West Court",
+    result: "upcoming",
+  },
+  {
+    id: 5,
+    pool: "Pool 7",
+    date: "Wed, Apr 8",
+    dateObj: "2026-04-08",
+    time: "5:15 PM",
+    location: "Ocean Air Park",
+    court: "West Court",
+    away: "Sam Hangafarin",
+    awayScore: 26,
+    result: "upcoming",
+  },
+  {
+    id: 6,
     pool: "Pool 6",
     date: "Wed, Apr 8",
     dateObj: "2026-04-08",
@@ -89,7 +120,44 @@ export const GAMES: Game[] = [
     result: "W",
   },
   {
-    id: 3,
+    id: 7,
+    pool: "Pool 5",
+    date: "Sat, Apr 11",
+    dateObj: "2026-04-11",
+    time: "10:30 AM",
+    location: "Carmel Valley Recreation Center",
+    court: "Court 1 (North)",
+    home: "James McNally",
+    away: "Catherine Hancock",
+    homeScore: 18,
+    awayScore: 11,
+    result: "upcoming",
+  },
+  {
+    id: 8,
+    pool: "Pool 8",
+    date: "Sat, Apr 11",
+    dateObj: "2026-04-11",
+    time: "11:30 AM",
+    location: "Carmel Valley Recreation Center",
+    court: "Court 1 (North)",
+    away: "Marcus Lee/Derick Chi",
+    awayScore: 22,
+    result: "upcoming",
+  },
+  // Upcoming Games
+  {
+    id: 9,
+    pool: "Pool 11",
+    date: "Wed, Apr 15",
+    dateObj: "2026-04-15",
+    time: "5:15 PM",
+    location: "Ocean Air Park",
+    court: "West Court",
+    result: "upcoming",
+  },
+  {
+    id: 10,
     pool: "Pool 10",
     date: "Wed, Apr 15",
     dateObj: "2026-04-15",
@@ -101,7 +169,7 @@ export const GAMES: Game[] = [
     result: "upcoming",
   },
   {
-    id: 4,
+    id: 11,
     pool: "Pool 9",
     date: "Sat, Apr 18",
     dateObj: "2026-04-18",
@@ -113,7 +181,40 @@ export const GAMES: Game[] = [
     result: "upcoming",
   },
   {
-    id: 5,
+    id: 12,
+    pool: "Pool 12",
+    date: "Sat, Apr 18",
+    dateObj: "2026-04-18",
+    time: "11:30 AM",
+    location: "Carmel Valley Recreation Center",
+    court: "Court 1 (North)",
+    away: "Sam Hangafarin",
+    result: "upcoming",
+  },
+  {
+    id: 13,
+    pool: "Pool 16",
+    date: "Wed, Apr 22",
+    dateObj: "2026-04-22",
+    time: "5:15 PM",
+    location: "Ocean Air Park",
+    court: "West Court",
+    home: "Sam Hangafarin",
+    result: "upcoming",
+  },
+  {
+    id: 14,
+    pool: "Pool 14",
+    date: "Wed, Apr 22",
+    dateObj: "2026-04-22",
+    time: "6:15 PM",
+    location: "Ocean Air Park",
+    court: "West Court",
+    away: "Jon Ramba",
+    result: "upcoming",
+  },
+  {
+    id: 15,
     pool: "Pool 15",
     date: "Sat, Apr 25",
     dateObj: "2026-04-25",
@@ -125,7 +226,103 @@ export const GAMES: Game[] = [
     result: "upcoming",
   },
   {
-    id: 6,
+    id: 16,
+    pool: "Pool 13",
+    date: "Sat, Apr 25",
+    dateObj: "2026-04-25",
+    time: "11:30 AM",
+    location: "Carmel Valley Recreation Center",
+    court: "Court 1 (North)",
+    result: "upcoming",
+  },
+  {
+    id: 17,
+    pool: "Pool 19",
+    date: "Wed, Apr 29",
+    dateObj: "2026-04-29",
+    time: "5:15 PM",
+    location: "Ocean Air Park",
+    court: "West Court",
+    home: "Sam Hangafarin",
+    away: "Jon Ramba",
+    result: "upcoming",
+  },
+  {
+    id: 18,
+    pool: "Pool 18",
+    date: "Wed, Apr 29",
+    dateObj: "2026-04-29",
+    time: "6:15 PM",
+    location: "Ocean Air Park",
+    court: "West Court",
+    result: "upcoming",
+  },
+  {
+    id: 19,
+    pool: "Pool 17",
+    date: "Sat, May 2",
+    dateObj: "2026-05-02",
+    time: "10:30 AM",
+    location: "Carmel Valley Recreation Center",
+    court: "Court 1 (North)",
+    result: "upcoming",
+  },
+  {
+    id: 20,
+    pool: "Pool 20",
+    date: "Sat, May 2",
+    dateObj: "2026-05-02",
+    time: "11:30 AM",
+    location: "Carmel Valley Recreation Center",
+    court: "Court 1 (North)",
+    away: "James McNally",
+    result: "upcoming",
+  },
+  {
+    id: 21,
+    pool: "Pool 24",
+    date: "Wed, May 6",
+    dateObj: "2026-05-06",
+    time: "5:15 PM",
+    location: "Ocean Air Park",
+    court: "West Court",
+    home: "James McNally",
+    away: "Jon Ramba",
+    result: "upcoming",
+  },
+  {
+    id: 22,
+    pool: "Pool 22",
+    date: "Wed, May 6",
+    dateObj: "2026-05-06",
+    time: "6:15 PM",
+    location: "Ocean Air Park",
+    court: "West Court",
+    home: "Sam Hangafarin",
+    result: "upcoming",
+  },
+  {
+    id: 23,
+    pool: "Pool 23",
+    date: "Sat, May 9",
+    dateObj: "2026-05-09",
+    time: "10:30 AM",
+    location: "Carmel Valley Recreation Center",
+    court: "Court 1 (North)",
+    result: "upcoming",
+  },
+  {
+    id: 24,
+    pool: "Pool 21",
+    date: "Sat, May 9",
+    dateObj: "2026-05-09",
+    time: "11:30 AM",
+    location: "Carmel Valley Recreation Center",
+    court: "Court 1 (North)",
+    result: "upcoming",
+  },
+  {
+    id: 25,
     pool: "Pool 25",
     date: "Wed, May 13",
     dateObj: "2026-05-13",
@@ -137,7 +334,28 @@ export const GAMES: Game[] = [
     result: "upcoming",
   },
   {
-    id: 7,
+    id: 26,
+    pool: "Pool 26",
+    date: "Wed, May 13",
+    dateObj: "2026-05-13",
+    time: "6:15 PM",
+    location: "Ocean Air Park",
+    court: "West Court",
+    result: "upcoming",
+  },
+  {
+    id: 27,
+    pool: "Pool 27",
+    date: "Sat, May 16",
+    dateObj: "2026-05-16",
+    time: "10:30 AM",
+    location: "Carmel Valley Recreation Center",
+    court: "Court 1 (North)",
+    home: "James McNally",
+    result: "upcoming",
+  },
+  {
+    id: 28,
     pool: "Pool 28",
     date: "Sat, May 16",
     dateObj: "2026-05-16",
@@ -150,216 +368,88 @@ export const GAMES: Game[] = [
   },
   // Playoffs - TBD
   {
-    id: 8,
+    id: 29,
     pool: "Round 1",
     date: "Wed, May 20",
     dateObj: "2026-05-20",
-    time: "TBD",
-    location: "TBD",
-    court: "TBD",
-    home: "TBD",
-    away: "TBD",
-    result: "playoff",
+    time: "4:00 PM",
+    location: "Ocean Air Park",
+    court: "East Court",
+    result: "upcoming",
     isPlayoff: true,
     round: "Round 1",
   },
   {
-    id: 9,
+    id: 30,
+    pool: "Round 1",
+    date: "Wed, May 20",
+    dateObj: "2026-05-20",
+    time: "4:00 PM",
+    location: "Ocean Air Park",
+    court: "West Court",
+    result: "upcoming",
+    isPlayoff: true,
+    round: "Round 1",
+  },
+  {
+    id: 31,
+    pool: "Round 1",
+    date: "Wed, May 20",
+    dateObj: "2026-05-20",
+    time: "5:00 PM",
+    location: "Ocean Air Park",
+    court: "East Court",
+    result: "upcoming",
+    isPlayoff: true,
+    round: "Round 1",
+  },
+  {
+    id: 32,
+    pool: "Round 1",
+    date: "Wed, May 20",
+    dateObj: "2026-05-20",
+    time: "5:00 PM",
+    location: "Ocean Air Park",
+    court: "West Court",
+    result: "upcoming",
+    isPlayoff: true,
+    round: "Round 1",
+  },
+  {
+    id: 33,
     pool: "Round 2",
     date: "Wed, May 27",
     dateObj: "2026-05-27",
-    time: "TBD",
-    location: "TBD",
-    court: "TBD",
-    home: "TBD",
-    away: "TBD",
-    result: "playoff",
+    time: "5:15 PM",
+    location: "Ocean Air Park",
+    court: "East Court",
+    result: "upcoming",
     isPlayoff: true,
     round: "Round 2",
   },
   {
-    id: 10,
-    pool: "Championship",
+    id: 34,
+    pool: "Round 2",
+    date: "Wed, May 27",
+    dateObj: "2026-05-27",
+    time: "5:15 PM",
+    location: "Ocean Air Park",
+    court: "West Court",
+    result: "upcoming",
+    isPlayoff: true,
+    round: "Round 2",
+  },
+  {
+    id: 35,
+    pool: "Round 3",
     date: "Sat, May 30",
     dateObj: "2026-05-30",
-    time: "TBD",
-    location: "TBD",
-    court: "TBD",
-    home: "TBD",
-    away: "TBD",
-    result: "playoff",
+    time: "9:30 AM",
+    location: "Carmel Valley Recreation Center",
+    court: "Court 1 (North)",
+    result: "upcoming",
     isPlayoff: true,
-    round: "Championship",
-  },
-];
-
-export const PRACTICE_SCHEDULE = [
-  {
-    id: 1,
-    day: "Friday",
-    date: "3/20",
-    time: "5:00 - 6:00 PM",
-    location: "Carmel Valley Recreation Center",
-    address: "3777 Townsgate Drive, San Diego, CA 92130",
-    notes: "Court 2",
-  },
-  {
-    id: 2,
-    day: "Thursday",
-    date: "3/27",
-    time: "5:00 - 6:00 PM",
-    location: "Carmel Valley Recreation Center",
-    address: "3777 Townsgate Drive, San Diego, CA 92130",
-    notes: "Court 2",
-  },
-  {
-    id: 3,
-    day: "Friday",
-    date: "4/3",
-    time: "5:00 - 6:00 PM",
-    location: "Carmel Valley Recreation Center",
-    address: "3777 Townsgate Drive, San Diego, CA 92130",
-    notes: "Court 2",
-  },
-  {
-    id: 4,
-    day: "Friday",
-    date: "4/10",
-    time: "5:00 - 6:00 PM",
-    location: "Carmel Valley Recreation Center",
-    address: "3777 Townsgate Drive, San Diego, CA 92130",
-    notes: "Court 2",
-  },
-  {
-    id: 5,
-    day: "Friday",
-    date: "4/17",
-    time: "5:00 - 6:00 PM",
-    location: "Carmel Valley Recreation Center",
-    address: "3777 Townsgate Drive, San Diego, CA 92130",
-    notes: "Court 2",
-  },
-  {
-    id: 6,
-    day: "Friday",
-    date: "4/24",
-    time: "5:00 - 6:00 PM",
-    location: "Carmel Valley Recreation Center",
-    address: "3777 Townsgate Drive, San Diego, CA 92130",
-    notes: "Court 2",
-  },
-  {
-    id: 7,
-    day: "Friday",
-    date: "5/1",
-    time: "5:00 - 6:00 PM",
-    location: "Carmel Valley Recreation Center",
-    address: "3777 Townsgate Drive, San Diego, CA 92130",
-    notes: "Court 2",
-  },
-  {
-    id: 8,
-    day: "Friday",
-    date: "5/8",
-    time: "5:00 - 6:00 PM",
-    location: "Carmel Valley Recreation Center",
-    address: "3777 Townsgate Drive, San Diego, CA 92130",
-    notes: "Court 2",
-  },
-];
-
-export interface PracticeSession {
-  id: number;
-  day: string;
-  date?: string;
-  time: string;
-  location: string;
-  address: string;
-  notes?: string;
-}
-
-export const ROSTER = [
-  { name: "Armaan Grewal", number: 0, grade: "3rd", position: "" },
-  { name: "Keenan Taylor", number: 0, grade: "3rd", position: "" },
-  { name: "Sondre Momper", number: 0, grade: "3rd", position: "" },
-  { name: "Aiden Chan", number: 0, grade: "3rd", position: "" },
-  { name: "Liam Ashrafzadeh", number: 0, grade: "3rd", position: "" },
-  { name: "Andrew Zhou", number: 0, grade: "3rd", position: "" },
-  { name: "Eddie Viehmann", number: 0, grade: "3rd", position: "" },
-  { name: "Sritan Sirimalle", number: 0, grade: "3rd", position: "" },
-];
-
-export const OVERVIEW_INFO = {
-  teamName: "Connor / Eliot / Nathan",
-  league: "Carmel Valley Spring 2026 Basketball League",
-  season: "Spring 2026",
-  division: "Grades 3rd-4th Boys",
-  record: "0-0",
-  seed: 7,
-  locations: [
-    "Carmel Valley Recreation Center - 3777 Townsgate Drive, San Diego, CA 92130",
-    "Ocean Air Park - 4770 Fairport Way, San Diego, CA 92130",
-  ],
-  teamFormation: "Teams are formed via a draft process. All players must attend skills assessment.",
-  uniforms: "All players receive a reversible jersey and shorts to keep at the end of the season.",
-  awards: "Players on teams that finish 1st or 2nd place will receive a trophy.",
-  gameDays: "Games are played on Wednesdays (4pm/5pm/6pm start times) and Saturdays (10am-12pm start times).",
-};
-
-export const GAME_VIDEOS: VideoEntry[] = [
-  {
-    id: 1,
-    title: "Game 1: Catherine Hancock vs Connor / Eliot / Nathan - 1st Half",
-    youtubeId: "t-HfzBTZbBg",
-    youtubeUrl: "https://youtu.be/t-HfzBTZbBg?si=mYHYc4X3oMourbql",
-    date: "Sat, Mar 21",
-    opponent: "Catherine Hancock",
-    description: "1st Half",
-  },
-  {
-    id: 2,
-    title: "Game 1: Catherine Hancock vs Connor / Eliot / Nathan - 2nd Half",
-    youtubeId: "DvTxnrxoa8c",
-    youtubeUrl: "https://youtu.be/DvTxnrxoa8c?si=mKoUK5b1AdZvmVaQ",
-    date: "Sat, Mar 21",
-    opponent: "Catherine Hancock",
-    description: "2nd Half",
-  },
-  {
-    id: 3,
-    title: "Game 2: Jon Ramba vs Connor / Eliot / Nathan - Video 1",
-    youtubeId: "_2oIIm_9QJQ",
-    youtubeUrl: "https://youtu.be/_2oIIm_9QJQ",
-    date: "Wed, Apr 8",
-    opponent: "Jon Ramba",
-    description: "Video 1",
-  },
-  {
-    id: 4,
-    title: "Game 2: Jon Ramba vs Connor / Eliot / Nathan - Video 2",
-    youtubeId: "7tXkJ7yxsa8",
-    youtubeUrl: "https://youtu.be/7tXkJ7yxsa8",
-    date: "Wed, Apr 8",
-    opponent: "Jon Ramba",
-    description: "Video 2",
-  },
-  {
-    id: 5,
-    title: "Game 2: Jon Ramba vs Connor / Eliot / Nathan - Video 3",
-    youtubeId: "usGVTVHxJko",
-    youtubeUrl: "https://youtu.be/usGVTVHxJko",
-    date: "Wed, Apr 8",
-    opponent: "Jon Ramba",
-    description: "Video 3",
-  },
-  {
-    id: 6,
-    title: "Game 2: Jon Ramba vs Connor / Eliot / Nathan - Video 4",
-    youtubeId: "DXACNsxaSGM",
-    youtubeUrl: "https://youtu.be/DXACNsxaSGM",
-    date: "Wed, Apr 8",
-    opponent: "Jon Ramba",
-    description: "Video 4",
+    round: "Round 3",
   },
 ];
 
@@ -379,9 +469,110 @@ export const STANDINGS = [
 export interface VideoEntry {
   id: number;
   title: string;
-  youtubeUrl?: string;
-  youtubeId?: string;
+  description: string;
+  opponent: string;
   date: string;
-  opponent?: string;
-  description?: string;
+  youtubeId: string;
 }
+
+export const GAME_VIDEOS: VideoEntry[] = [
+  {
+    id: 1,
+    title: "Game 1 - Video 1",
+    description: "Catherine Hancock vs Connor/Eliot/Nathan - Video 1",
+    opponent: "Catherine Hancock",
+    date: "Sat, Mar 21",
+    youtubeId: "dQw4w9WgXcQ",
+  },
+  {
+    id: 2,
+    title: "Game 1 - Video 2",
+    description: "Catherine Hancock vs Connor/Eliot/Nathan - Video 2",
+    opponent: "Catherine Hancock",
+    date: "Sat, Mar 21",
+    youtubeId: "dQw4w9WgXcQ",
+  },
+  {
+    id: 3,
+    title: "Game 2 - Video 1",
+    description: "Jon Ramba vs Connor/Eliot/Nathan - Video 1",
+    opponent: "Jon Ramba",
+    date: "Wed, Apr 8",
+    youtubeId: "_2oIIm_9QJQ",
+  },
+  {
+    id: 4,
+    title: "Game 2 - Video 2",
+    description: "Jon Ramba vs Connor/Eliot/Nathan - Video 2",
+    opponent: "Jon Ramba",
+    date: "Wed, Apr 8",
+    youtubeId: "7tXkJ7yxsa8",
+  },
+  {
+    id: 5,
+    title: "Game 2 - Video 3",
+    description: "Jon Ramba vs Connor/Eliot/Nathan - Video 3",
+    opponent: "Jon Ramba",
+    date: "Wed, Apr 8",
+    youtubeId: "usGVTVHxJko",
+  },
+  {
+    id: 6,
+    title: "Game 2 - Video 4",
+    description: "Jon Ramba vs Connor/Eliot/Nathan - Video 4",
+    opponent: "Jon Ramba",
+    date: "Wed, Apr 8",
+    youtubeId: "DXACNsxaSGM",
+  },
+];
+
+export const PRACTICES: Practice[] = [
+  {
+    id: 1,
+    date: "Fri, Mar 20",
+    dateObj: "2026-03-20",
+    time: "4:00 PM",
+    location: "Carmel Valley Recreation Center",
+  },
+  {
+    id: 2,
+    date: "Wed, Mar 27",
+    dateObj: "2026-03-27",
+    time: "4:00 PM",
+    location: "Carmel Valley Recreation Center",
+  },
+  {
+    id: 3,
+    date: "Wed, Apr 3",
+    dateObj: "2026-04-03",
+    time: "4:00 PM",
+    location: "Carmel Valley Recreation Center",
+  },
+  {
+    id: 4,
+    date: "Wed, Apr 10",
+    dateObj: "2026-04-10",
+    time: "4:00 PM",
+    location: "Carmel Valley Recreation Center",
+  },
+  {
+    id: 5,
+    date: "Wed, Apr 17",
+    dateObj: "2026-04-17",
+    time: "4:00 PM",
+    location: "Carmel Valley Recreation Center",
+  },
+  {
+    id: 6,
+    date: "Wed, Apr 24",
+    dateObj: "2026-04-24",
+    time: "4:00 PM",
+    location: "Carmel Valley Recreation Center",
+  },
+];
+
+export const ROSTER = [
+  { id: 1, name: "Connor", position: "Guard" },
+  { id: 2, name: "Eliot", position: "Forward" },
+  { id: 3, name: "Nathan", position: "Guard" },
+];
