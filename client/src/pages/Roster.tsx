@@ -38,10 +38,21 @@ export default function RosterPage() {
               className="bg-[oklch(0.17_0.008_265)] border border-[oklch(0.28_0.008_265)] rounded-sm p-4 text-center hover:border-[oklch(0.68_0.19_42/0.4)] transition-colors duration-200"
             >
               {/* Jersey number */}
+              {player.number && (
+                <div
+                  className="text-[oklch(0.68_0.19_42)] font-bold mb-2"
+                  style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "2rem", lineHeight: 1 }}
+                >
+                  #{player.number}
+                </div>
+              )}
+
               {/* Avatar placeholder */}
-              <div className="w-12 h-12 rounded-full bg-[oklch(0.22_0.008_265)] flex items-center justify-center mx-auto mb-3">
-                <User className="w-6 h-6 text-[oklch(0.45_0.01_265)]" />
-              </div>
+              {!player.number && (
+                <div className="w-12 h-12 rounded-full bg-[oklch(0.22_0.008_265)] flex items-center justify-center mx-auto mb-3">
+                  <User className="w-6 h-6 text-[oklch(0.45_0.01_265)]" />
+                </div>
+              )}
 
               <div
                 className="text-white font-bold text-sm"
@@ -49,8 +60,19 @@ export default function RosterPage() {
               >
                 {player.name}
               </div>
-
-
+              {player.grade && (
+                <div className="text-[oklch(0.55_0.01_265)] text-xs mt-1" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                  {player.grade}
+                </div>
+              )}
+              {player.position && (
+                <div
+                  className="text-[oklch(0.68_0.19_42)] text-xs mt-1 font-bold uppercase"
+                  style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.08em" }}
+                >
+                  {player.position}
+                </div>
+              )}
             </div>
           ))}
         </div>

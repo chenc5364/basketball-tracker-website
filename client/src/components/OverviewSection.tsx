@@ -3,7 +3,7 @@
   Overview section with key info cards and league details
 */
 import { MapPin, Calendar, Info, Trophy, Shirt, Users } from "lucide-react";
-// import { OVERVIEW_INFO, TEAM_INFO } from "@/lib/data";
+import { OVERVIEW_INFO, TEAM_INFO } from "@/lib/data";
 
 const COURT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663436047923/KyCgDSb4mcg4qtRETmWrCn/court-pattern-ZxwFDT4dsca7vd5oUK6xAt.webp";
 
@@ -81,19 +81,19 @@ export default function OverviewSection() {
             </InfoCard>
 
             <InfoCard icon={Info} title="Game Days">
-              Games are played on Wednesday evenings (around 4-6pm) and Saturday mornings (around 10am-12pm) at Carmel Valley Rec Center and Ocean Air Park.
+              {OVERVIEW_INFO.gameDays}
             </InfoCard>
 
             <InfoCard icon={Users} title="Team Formation">
-              All teams are formed via a draft process. Siblings are guaranteed to play on the same team.
+              {OVERVIEW_INFO.teamFormation}
             </InfoCard>
 
             <InfoCard icon={Shirt} title="Uniforms & Jerseys">
-              All players receive a reversible jersey and shorts to keep at the end of the season.
+              {OVERVIEW_INFO.uniforms}
             </InfoCard>
 
             <InfoCard icon={Trophy} title="Season Awards">
-              Players on teams that finish 1st or 2nd place will receive a trophy.
+              {OVERVIEW_INFO.awards}
             </InfoCard>
           </div>
 
@@ -147,7 +147,7 @@ export default function OverviewSection() {
 
             {/* MasterSports link */}
             <a
-              href="https://www.mastersports.com/leagues/carmel-valley-summer-2026-spring-basketball-league/divisions/boys-grades-3-4"
+              href={TEAM_INFO.sourceUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="block text-center py-3 border border-[oklch(0.68_0.19_42/0.4)] text-[oklch(0.68_0.19_42)] text-sm font-bold uppercase tracking-wider rounded-sm hover:bg-[oklch(0.68_0.19_42/0.1)] transition-colors duration-200"

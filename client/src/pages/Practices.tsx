@@ -3,10 +3,10 @@
 */
 import { Clock, MapPin, Calendar, AlertCircle } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
-import { PRACTICES } from "@/lib/data";
+import { PRACTICE_SCHEDULE } from "@/lib/data";
 
 export default function Practices() {
-  const hasRealData = PRACTICES.length > 0;
+  const hasRealData = PRACTICE_SCHEDULE.length > 0 && PRACTICE_SCHEDULE[0].day !== "TBD";
 
   return (
     <PageLayout title="Practice Schedule" subtitle="Weekly Training">
@@ -73,7 +73,7 @@ export default function Practices() {
       ) : (
         /* Real practice data */
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {PRACTICES.map((practice) => (
+          {PRACTICE_SCHEDULE.map((practice) => (
             <div
               key={practice.id}
               className="bg-[oklch(0.17_0.008_265)] border border-[oklch(0.28_0.008_265)] border-l-4 rounded-sm p-5 hover:border-[oklch(0.68_0.19_42/0.4)] transition-colors duration-200"
@@ -83,7 +83,12 @@ export default function Practices() {
                 className="text-[oklch(0.68_0.19_42)] font-bold mb-3"
                 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.2rem", textTransform: "uppercase", letterSpacing: "0.05em" }}
               >
-                {practice.date}
+                {practice.day}
+                {practice.date && (
+                  <span className="text-[oklch(0.55_0.01_265)] text-sm ml-2 font-normal">
+                    {practice.date}
+                  </span>
+                )}
               </div>
 
               <div className="space-y-2">
@@ -97,10 +102,14 @@ export default function Practices() {
                   <MapPin className="w-4 h-4 text-[oklch(0.55_0.01_265)] flex-shrink-0 mt-0.5" />
                   <div style={{ fontFamily: "'DM Sans', sans-serif" }}>
                     <div className="text-sm font-semibold text-white">{practice.location}</div>
-
+                    <div className="text-xs text-[oklch(0.55_0.01_265)]">{practice.address}</div>
                   </div>
                 </div>
-
+                {practice.notes && (
+                  <p className="text-[oklch(0.55_0.01_265)] text-xs mt-2 pt-2 border-t border-[oklch(0.22_0.008_265)]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                    {practice.notes}
+                  </p>
+                )}
               </div>
             </div>
           ))}
