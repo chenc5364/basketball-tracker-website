@@ -145,14 +145,7 @@ export default function RosterSection() {
                   {player.name}
                 </div>
 
-                {player.position && (
-                  <div
-                    className="text-[oklch(0.68_0.19_42)] text-xs mt-1 font-bold uppercase"
-                    style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.08em" }}
-                  >
-                    {player.position}
-                  </div>
-                )}
+
               </div>
             ))}
           </div>

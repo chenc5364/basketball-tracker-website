@@ -137,7 +137,7 @@ export default function VideosSection() {
           /* Real videos grid */
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {GAME_VIDEOS.map((video) => (
-              <VideoCard key={video.id} video={video} />
+              <VideoCard key={video.youtubeId} video={video} />
             ))}
           </div>
         )}

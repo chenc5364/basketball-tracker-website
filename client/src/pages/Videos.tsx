@@ -46,10 +46,11 @@ export default function VideosPage() {
 
   // Group videos by date
   const videosByDate = GAME_VIDEOS.reduce((acc, video) => {
-    if (!acc[video.date]) {
-      acc[video.date] = [];
+    const date = video.date || "Undated";
+    if (!acc[date]) {
+      acc[date] = [];
     }
-    acc[video.date].push(video);
+    acc[date].push(video);
     return acc;
   }, {} as Record<string, VideoEntry[]>);
 
@@ -125,7 +126,7 @@ export default function VideosPage() {
               {/* Videos for this date */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {videos.map((video) => (
-                  <VideoCard key={video.id} video={video} />
+                  <VideoCard key={video.youtubeId} video={video} />
                 ))}
               </div>
             </div>
