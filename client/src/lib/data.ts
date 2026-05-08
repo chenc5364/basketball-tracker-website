@@ -131,7 +131,7 @@ export const GAMES: Game[] = [
     pool: "Pool 23",
     date: "Sat, May 9",
     dateObj: "2026-05-09",
-    time: "10:30 AM",
+    time: "10:00 AM",
     location: "Carmel Valley Recreation Center",
     court: "Court 1 (North)",
     home: "Connor / Eliot / Nathan",
